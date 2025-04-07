@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Random Clip</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static-cdn.jtvnw.net/jtv_user_pictures/3887579e-7b84-403e-9ed1-cc17c9789b1e-profile_image-300x300.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>
+      Get Random Clip<img
+        src="https://static-cdn.jtvnw.net/jtv_user_pictures/3887579e-7b84-403e-9ed1-cc17c9789b1e-profile_image-300x300.png"
+        style="width: 60px; height: 60px; float: left"
+      /><img
+        src="https://sammi.solutions/assets/images/extensions/get_random_clip_ss1.png"
+        style="width: 60px; height: 60px; float: right"
+      />
+    </h1>
+    <h2 style="text-align: center">
+      Grabs a random clip from a specified Twitch Channel
+    </h2>
+    <p>
+      Getting a random clip and displaying it in your OBS using SAMMI has never
+      been easier! Check out the features below!
+    </p>
+
+    <h2>Features</h2>
+    <ul>
+      <li>
+        Fully customisable request to Twitch including; amount of clips,
+        timeframe to search, minimum views and cutoff length
+      </li>
+      <li>
+        Pre-configured buttons to trigger on Raids and '!so @user' in chat
+      </li>
+      <li>Auto setup button for creating the OBS scene and source needed</li>
+      <li>Ability to add more actions when the clip plays</li>
+      <li>SAMMI commands so you can create your own buttons</li>
+    </ul>
+
+    <h2>Setup</h2>
+    <ol>
+      <li>
+        Install the extension. Refer to the SAMMI
+        <a href="https://sammi.solutions/extensions/install" target="_blank"
+          >documentation</a
+        >
+        on how to install an extension.
+      </li>
+      <li>Ensure OBS is open and connected to SAMMI</li>
+      <li>
+        The extension should now auto run the setup and will be usable as is
+        with the default values in the <strong>SETTINGS</strong> button and the
+        two default buttons for Raids and '!so @user' in chat <br />
+        <a href="deck.png" target="_blank"
+          ><img src="deck.png" alt="View of the Deck" />
+        </a>
+      </li>
+    </ol>
+
+    <h2>Customisation</h2>
+    <ul>
+      <li>
+        You can customise the default values that the extension uses to get
+        clips from Twitch by editing the variables in the
+        <strong>SETTINGS</strong> button
+        <ul>
+          <li>
+            <strong>Amount</strong> - Default value for how many clips are being
+            pulled (recommended to leave this at 100)
+          </li>
+          <li>
+            <strong>Timeframe</strong> - Default value for how old a clip can be
+            (for example 365 => clip is from the last 365 days)
+          </li>
+          <li>
+            <strong>Min_views</strong> - Default value for how many views a clip
+            needs to have before it is pulled
+          </li>
+          <li>
+            <strong>Cutoff_length</strong> - The maximum amount of time in
+            seconds which a clip should play until it's cutoff
+          </li>
+        </ul>
+        <a href="SETTINGS.png" target="_blank"
+          ><img src="SETTINGS.png" alt="SETTINGS Button"
+        /></a>
+      </li>
+      <li>
+        You can add various other actions that happen when the clip plays by
+        adding them to the
+        <strong>Extension Interface: Play Clip</strong> button <br />
+        <br />
+        Make sure to add everything you want to happen before/as the clip starts
+        before the 'Wait for Timeout' and everything you want to happen after
+        the clip ends after the 'Wait for Timeout'<br />
+        <a href="playclip.png" target="_blank"
+          ><img src="playclip.png" alt="Play Clip Button"
+        /></a>
+      </li>
+      <li>
+        If you don't want to use the default Raid and '!so @user' buttons in the
+        deck, you can delete the triggers from the buttons
+      </li>
+      <li>
+        Remember that if you'd like, you can use the 'Get Random Clip' command
+        with your own values or ones from the <strong>SETTINGS</strong> button
+        along with the 'Play Clip' command using the data returned from the 'Get
+        Random Clip' command in your own button <br />
+        <a href="example.png" target="_blank"
+          ><img src="example.png" alt="Example using the two commands"
+        /></a>
+      </li>
+    </ul>
+  </body>
+  <footer>
+    <p>
+      Extension by
+      <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a><br />
+      Docs created by
+      <a href="https://poetryandlilies.itch.io" target="_blank"
+        >PoetryandLilies</a
+      ><br />
+      2025
+    </p>
+  </footer>
+</html>
