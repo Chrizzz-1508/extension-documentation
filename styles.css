@@ -50,10 +50,7 @@ img {
         min-height: 70%;
         padding: 5px;
     }
-    .img-left, .img-right {
-        padding: unset;
-    }
-    .heading, .sub-heading {
+    .img-left, .img-right, .heading, .sub-heading, body {
         padding: unset;
     }
     ol, ul {
@@ -61,6 +58,9 @@ img {
     }
     .sub-heading-1 {
         padding-left: 0px;
+    }
+    body {
+        margin: 15px;
     }
 }
 ol, ul {
