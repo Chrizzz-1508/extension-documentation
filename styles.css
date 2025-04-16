@@ -55,6 +55,7 @@ img {
     }
     ol, ul {
         padding-left: 1rem;
+        padding-right: 1rem;
     }
     .sub-heading-1 {
         padding-left: 0px;
