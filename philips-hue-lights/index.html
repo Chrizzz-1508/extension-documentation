@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Philips Hue Light Control</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static-cdn.jtvnw.net/jtv_user_pictures/3887579e-7b84-403e-9ed1-cc17c9789b1e-profile_image-300x300.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://Chrizzz-1508.github.io/extension-documentation/styles.css"
+    />
+  </head>
+  <body>
+    <h1 class="heading">
+      Philips Hue Light Control<img
+        src="https://static-cdn.jtvnw.net/jtv_user_pictures/3887579e-7b84-403e-9ed1-cc17c9789b1e-profile_image-300x300.png"
+        class="img-left"
+      /><img
+        src="https://sammi.solutions/assets/images/extensions/hue_ss1.png"
+        class="img-right"
+      />
+    </h1>
+    <h2 class="sub-heading">Allows you to control you Philips Hue Lights</h2>
+    <p>
+      Controlling your Philips Hue Lights remotely has never been simpler with
+      this extension! Check out the features below!
+    </p>
+
+    <h2 class="sub-heading-1">Features</h2>
+    <ul>
+      <li>Ability to check the status and settings of a light</li>
+      <li>
+        Ability to modify the settings of a light including; state, brightness,
+        saturation, temperature and hue value
+      </li>
+      <li>
+        Auto setup walks you through connecting the Philips Hue Bridge to SAMMI
+      </li>
+    </ul>
+
+    <h2 class="sub-heading-1">Setup</h2>
+    <ol>
+      <li>
+        Install the extension. Refer to the SAMMI
+        <a href="https://sammi.solutions/extensions/install" target="_blank"
+          >documentation</a
+        >
+        on how to install an extension.
+      </li>
+      <li>
+        The extension should now launch the setup dialogue. Follow the
+        instructions to auto discover the Philips Hue Bridge or enter the IP
+        manually
+      </li>
+      <li>
+        If you need to modify the IP of the Philips Hue Bridge, you can edit the
+        phlc.ini file that the setup creates in the root SAMMI folder
+        <a
+          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/deck.png"
+          target="_blank"
+          title="Click for Large Image"
+          ><img
+            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/deck.png"
+            alt="View of the Deck"
+          />
+        </a>
+      </li>
+    </ol>
+
+    <h2 class="sub-heading-1">Using the Commands</h2>
+    <ul>
+      <li>
+        You can refer to the example buttons in the deck at any point for
+        examples of both commands
+      </li>
+      <li>
+        <strong>Get Light Info</strong> - Fetches information about a specific
+        light
+        <ul>
+          <li><strong>ID</strong> - ID of the light</li>
+          <li>
+            <strong>On</strong> - If the specified light is on. 1 = on, 0 = off
+          </li>
+          <li>
+            <strong>Reachable</strong> - If the specified light is reachable by
+            the bridge. 1 = reachable, 0 = unreachable
+          </li>
+          <li>
+            <strong>Bri</strong> - Brightness, in range 0 - 254 (0 is not off)
+          </li>
+          <li><strong>Sat</strong> - Saturation, in range 0 - 254</li>
+          <li>
+            <strong>Ct</strong> - White color temperature, 154 (cold) - 500
+            (warm)
+          </li>
+          <li><strong>Hue</strong> - Hue value (color) in range 0 - 65535</li>
+          <li>
+            Example Payload:
+            <pre>
+                    <code>
+{
+"hue": 39563.0,
+"sat": 15.0,
+"bri": 254.0,
+"on": 0.0,
+"ct": 230.0,
+"reachable": 1.0,
+"id": 4.0,
+"name": "Desk"
+}
+                    </code>
+                </pre>
+        </ul>
+            <a
+              href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/light-info.png"
+              target="_blank"
+              title="Click for Large Image"
+              ><img
+                src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/light-info.png"
+                alt="Light info Button"
+            /></a>
+          </li>
+      </li>
+      <li>
+        <strong>Modify Light</strong> - Modifies a specific light (You can use the above command to get the exact settings for a color you want)
+        </li>
+        <li>
+            <strong style="color:red">WARNING: Do not try to set the "White Temp" & "Hue / Color" at the same time!</strong>
+        <ul>
+            <li><strong>Light</strong> - ID of the light (using the name instead is optional)</li>
+            <li><strong>State</strong> - Change the status of the light</li>
+            <li><strong>Brightness</strong> - Change the brightness of the light in a range from 0 - 254 (0 is not off)</li>
+            <li><strong>Saturation</strong> - Change the saturation of the light in a range from 0 - 254</li>
+            <li><strong>White Temp</strong> - Change the white color temperature of the light, 154 (cold) - 500 (warm)</li>
+            <li><strong>Hue / Color</strong> - Change the hue value (color) of the light in range 0 - 65535</li>
+        </ul>
+        <a
+              href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/light-modify.png"
+              target="_blank"
+              title="Click for Large Image"
+              ><img
+                src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/light-modify.png"
+                alt="Light modify Button"
+            /></a>
+      </li>
+    </ul>
+  </body>
+</html>
