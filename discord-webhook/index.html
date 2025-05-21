@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discord Webhook</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/chrizzz-profile_image-300x300.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://Chrizzz-1508.github.io/extension-documentation/styles.css"
+    />
+  </head>
+  <body>
+    <h1 class="heading">
+      Discord Webhook<img
+        src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/chrizzz-profile_image-300x300.png"
+        class="img-left"
+      /><img
+        src="https://sammi.solutions/assets/images/extensions/discord_webhook_ss1.png"
+        class="img-right"
+      />
+    </h1>
+    <h2 class="sub-heading">
+      This extension lets you send various things to a Discord webhook
+    </h2>
+    <p>
+      If you want to send a message to your Discord from SAMMI, for example when
+      you go live this extension is for you! Check out the features below!
+    </p>
+
+    <h2 class="sub-heading-1">Features</h2>
+    <ul>
+      <li>Send a simple message to Discord</li>
+      <li>Send a screenshot of your OBS source, scene or group</li>
+      <li>Send a local file to Discord</li>
+      <li>Send a formatted JSON embed to Discord</li>
+    </ul>
+
+    <h2 class="sub-heading-1">Setup</h2>
+    <ol>
+      <li>
+        Install the extension. Refer to the SAMMI
+        <a href="https://sammi.solutions/extensions/install" target="_blank"
+          >documentation</a
+        >
+        on how to install an extension.
+      </li>
+      <li>
+        Make sure to setup a webhook in your Discord. This can be done by going
+        to the settings of your server, then <strong>Integrations</strong>. From
+        there, select <strong>Webhooks</strong> and then
+        <strong>New Webhook</strong>.
+      </li>
+      <li>
+        From there you can select the channel that it should post in, give the
+        webhook a name and even add a profile picture for it.
+      </li>
+      <li>
+        Once completed, be sure to copy the <strong>Webhook URL</strong> as
+        we'll need it in all the commands.
+      </li>
+      <li>
+        You can open the deck and click into any of the example buttons to see
+        an example of the associated command.<br />
+        <a
+          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/discord-webhook/deck.png"
+          target="_blank"
+          title="Click for Large Image"
+          ><img
+            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/discord-webhook/deck.png"
+            alt="View of the Deck"
+          />
+        </a>
+      </li>
+    </ol>
+
+    <h2 class="sub-heading-1">Using the Commands</h2>
+    <ul>
+      <li>
+        For each command, the <strong>Webhook URL</strong> box should contain
+        the URL you generated from the previous setup between quotes or as it is
+        a yellow box, you can have the URL in a variable somewhere and use that
+        variable instead.
+      </li>
+      <li>
+        The <strong>Thread ID</strong> box is optional and should contain a
+        string of numbers for the thread in a forum. This can be obtained by
+        right clicking the thread and selecting <strong>Copy Thread ID</strong>.
+      </li>
+      <li>
+        <strong>Discord: Message</strong> - Sends a simple plain text message to
+        the webhook.
+        <ul>
+          <li>
+            <strong>Message</strong> - Should contain the text you want to send.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Discord: Source Screenshot</strong> - Sends a screenshot of a
+        scene, source or group from your OBS.
+        <ul>
+          <li>
+            <strong>OBS Name</strong> - This should be the name of your OBS
+            connection from the SAMMI OBS Connections settings. Leave as 'Main'
+            if you never changed this.
+          </li>
+          <li>
+            <strong>Websocket PW</strong> - Your websocket password that you use
+            in the OBS Connections settings. Leave blank if you don't have a
+            password set.
+          </li>
+          <li>
+            <strong>Source Name</strong> - This is the name of your scene,
+            source or group. You can select it from the drop down menu or type
+            in the box.
+          </li>
+          <li>
+            <strong>Message</strong> - This is an optional message to send with
+            the screenshot.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Discord: Upload File</strong> - Sends a local file to Discord.
+        <ul>
+          <li>
+            <strong>File Path</strong> - Path to the file on your PC. You can
+            use the file picker to open a window where you can navigate to the
+            file or type the path here manually.
+          </li>
+          <li>
+            <strong>Message</strong> - This is an optional message to send with
+            the file upload.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Discord: Embed</strong> - Sends a JSON formatted embed to
+        Discord.
+        <ul>
+          <li>
+            <strong>Body</strong> - This should be a JSON formatted embed body.
+            You can use a site such as
+            <a
+              href="https://discohook.org"
+              target="_blank"
+              title="Discohook Embed"
+              >DiscoHook</a
+            >
+            to generate the embed JSON and then paste it here.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a
+          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/discord-webhook/examples.png"
+          target="_blank"
+          title="Click for Large Image"
+          ><img
+            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/discord-webhook/examples.png"
+            alt="Examples of the commands"
+          />
+        </a>
+      </li>
+    </ul>
+  </body>
+  <footer>
+    <p>
+      Extension by
+      <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a><br />
+      Docs created by
+      <a href="https://poetryandlilies.itch.io" target="_blank"
+        >PoetryandLilies</a
+      ><br />
+      2025
+    </p>
+  </footer>
+</html>
