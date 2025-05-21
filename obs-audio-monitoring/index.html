@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OBS Audio Monitoring</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/chrizzz-profile_image-300x300.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://Chrizzz-1508.github.io/extension-documentation/styles.css"
+    />
+  </head>
+  <body>
+    <h1 class="heading">
+      OBS Audio Monitoring<img
+        src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/chrizzz-profile_image-300x300.png"
+        class="img-left"
+      /><img
+        src="https://sammi.solutions/assets/images/extensions/audio_monitoring_ss1.png"
+        class="img-right"
+      />
+    </h1>
+    <h2 class="sub-heading">
+      This extension subscribes to your OBS audio levels
+    </h2>
+    <p>
+      If you want to check your OBS source audio levels and even trigger buttons
+      based on their sound, this extension is for you! Check out the features
+      below!
+    </p>
+
+    <h2 class="sub-heading-1">Features</h2>
+    <ul>
+      <li>Subscribes to your OBS source sound levels</li>
+      <li>
+        Sends event triggers based on whether the sound has stopped or started
+      </li>
+      <li>
+        Lists all of your sources that have audio in db - accessible from any
+        SAMMI button
+      </li>
+    </ul>
+
+    <h2 class="sub-heading-1">Setup</h2>
+    <ol>
+      <li>
+        Install the extension. Refer to the SAMMI
+        <a href="https://sammi.solutions/extensions/install" target="_blank"
+          >documentation</a
+        >
+        on how to install an extension.
+      </li>
+      <li>Enter the <strong>Settings</strong> button in the included deck.</li>
+      <li>
+        Enter your OBS Connection name - this should be the name of your OBS
+        connection in the OBS Connections Settings window in SAMMI. If you
+        haven't changed this you can leave it as 'Main'.
+      </li>
+      <li>
+        Enter your websocket password in the <strong>Websocket PW</strong> box.
+        You can leave this blank if you don't have a password set.
+      </li>
+      <li>
+        In the <strong>Refresh Rate</strong> box you can leave it as the default
+        50 to have the sources polled every 50ms. If you encounter any issues
+        with the workload, you can increase this number.
+      </li>
+      <li>
+        Now you can open OBS and it will connect. Alternatively if you had OBS
+        open already you can restart SAMMI.<br />
+        <a
+          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/obs-audio-monitoring/setup.png"
+          target="_blank"
+          title="Click for Large Image"
+          ><img
+            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/obs-audio-monitoring/setup.png"
+            alt="View of the settings"
+          />
+        </a>
+        <br />
+        <a
+          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/obs-audio-monitoring/deck.png"
+          target="_blank"
+          title="Click for Large Image"
+          ><img
+            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/obs-audio-monitoring/deck.png"
+            alt="View of the Deck"
+          />
+        </a>
+      </li>
+    </ol>
+
+    <h2 class="sub-heading-1">Using the Extension</h2>
+    <ul>
+      <li>
+        You can find all the variables for your sources and their sound level
+        measured in db in the button ID <strong>OBS_AUDIO_LEVEL</strong> this
+        button is titled "This button has all your audio levels" in the deck.
+        <ul>
+          <li>
+            Each source will be the name of the variable in this button. Dots
+            will be stripped from any source names
+          </li>
+          <li>If the source is silent it will have a value of -92</li>
+          <li>
+            To reference the variable value anywhere else you can use dot
+            notation. For example: <strong>OBS_AUDIO_LEVEL.Youtube</strong>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Event Audio Triggers</strong>
+        <ul>
+          <li>
+            When SAMMI checks your audio levels it will send an extension
+            trigger for each source that starts or stops audio
+          </li>
+          <li>
+            The triggers will be in the form
+            <strong>Audio Started &lt;Sourcename&gt;</strong> or
+            <strong>Audio Stopped &lt;Sourcename&gt;</strong>
+          </li>
+          <li>
+            If a source is producing any sound while having played none before,
+            it will send an
+            <strong>Audio Started &lt;Sourcename&gt;</strong> extension trigger.
+          </li>
+          <li>
+            If a source stopped producing any sound while having sound before,
+            it will send an
+            <strong>Audio Stopped &lt;Sourcename&gt;</strong> extension trigger.
+          </li>
+          <li>
+            <strong style="color: red">Note:</strong> Unfortunately this means
+            that if there is a break in the sound (for example a pause in the
+            sentence for mic) while the source is polled it will assume the
+            source has stopped audio.
+          </li>
+          <li>
+            <strong>Example Payload:</strong>
+            <pre>
+                <code>
+{
+"audiosource": "Voicemeeter",
+"trigger_name": "Audio Started Voicemeeter",
+"db": -92,
+"active": 1.0,
+}
+                </code>
+            </pre>
+            You can trigger pull these values from the
+            <a
+              href="https://sammi.solutions/docs/commands/trigger-extension"
+              target="_blank"
+              title="Extension Trigger"
+              >extension trigger</a
+            >
+            <ul>
+              <li><strong>audiosource</strong> - Name of the source</li>
+              <li><strong>trigger_name</strong> - Name of the trigger</li>
+              <li>
+                <strong>db</strong> - Current decibel value (-92 = no sound)
+              </li>
+              <li>
+                <strong>active</strong> - Whether the current source is active
+                (0=inactive, 1=active)
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <br />
+        <a
+          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/obs-audio-monitoring/obs.png"
+          target="_blank"
+          title="Click for Large Image"
+          ><img
+            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/obs-audio-monitoring/obs.png"
+            alt="View of the variables"
+          />
+        </a>
+        <br />
+        <a
+          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/obs-audio-monitoring/obs1.png"
+          target="_blank"
+          title="Click for Large Image"
+          ><img
+            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/obs-audio-monitoring/obs1.png"
+            alt="View of the trigger payload"
+          />
+        </a>
+      </li>
+    </ul>
+  </body>
+  <footer>
+    <p>
+      Extension by
+      <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a><br />
+      Docs created by
+      <a href="https://poetryandlilies.itch.io" target="_blank"
+        >PoetryandLilies</a
+      ><br />
+      2025
+    </p>
+  </footer>
+</html>
