@@ -67,11 +67,7 @@
       <li>
         In the <strong>Refresh Rate</strong> box you can leave it as the default
         50 to have the sources polled every 50ms. If you encounter any issues
-        with the workload, you can increase this number.
-      </li>
-      <li>
-        Now you can open OBS and it will connect. Alternatively if you had OBS
-        open already you can restart SAMMI.<br />
+        with the workload, you can increase this number.<br />
         <a
           href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/obs-audio-monitoring/setup.png"
           target="_blank"
@@ -81,6 +77,10 @@
             alt="View of the settings"
           />
         </a>
+      </li>
+      <li>
+        Now you can open OBS and it will connect. Alternatively if you had OBS
+        open already you can restart SAMMI.
         <br />
         <a
           href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/obs-audio-monitoring/deck.png"
@@ -99,7 +99,7 @@
       <li>
         You can find all the variables for your sources and their sound level
         measured in db in the button ID <strong>OBS_AUDIO_LEVEL</strong> this
-        button is titled "This button has all your audio levels" in the deck.
+        button is titled "This button has all your audio levels" in the deck
         <ul>
           <li>
             Each source will be the name of the variable in this button. Dots
@@ -127,18 +127,18 @@
           <li>
             If a source is producing any sound while having played none before,
             it will send an
-            <strong>Audio Started &lt;Sourcename&gt;</strong> extension trigger.
+            <strong>Audio Started &lt;Sourcename&gt;</strong> extension trigger
           </li>
           <li>
             If a source stopped producing any sound while having sound before,
             it will send an
-            <strong>Audio Stopped &lt;Sourcename&gt;</strong> extension trigger.
+            <strong>Audio Stopped &lt;Sourcename&gt;</strong> extension trigger
           </li>
           <li>
             <strong style="color: red">Note:</strong> Unfortunately this means
             that if there is a break in the sound (for example a pause in the
             sentence for mic) while the source is polled it will assume the
-            source has stopped audio.
+            source has stopped audio
           </li>
           <li>
             <strong>Example Payload:</strong>
