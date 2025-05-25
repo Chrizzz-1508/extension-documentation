@@ -62,7 +62,20 @@
       </li>
       <li>
         Enter your websocket password in the <strong>Websocket PW</strong> box.
-        You can leave this blank if you don't have a password set.
+        You can leave this blank if you don't have a password set. <br />
+        If you leave this box empty, please make sure that the "Enable
+        Authentication" Box in your OBS Websocket settings is
+        <strong>NOT</strong> checked.
+        <br />
+        <a
+          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/obs-audio-monitoring/websocket.png"
+          target="_blank"
+          title="Click for Large Image"
+          ><img
+            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/obs-audio-monitoring/websocket.png"
+            alt="Websocket Settings"
+          />
+        </a>
       </li>
       <li>
         In the <strong>Refresh Rate</strong> box you can leave it as the default
@@ -106,6 +119,12 @@
             will be stripped from any source names
           </li>
           <li>If the source is silent it will have a value of -92</li>
+          <li>
+            OBS Audio levels slowly fade out so the value will gradually
+            decrease as it falls silent. You may find that between one check and
+            the next it only falls slightly until it reaches silence. E.g. -30,
+            -50, -75 then -92 over four 50ms checks.
+          </li>
           <li>
             To reference the variable value anywhere else you can use dot
             notation. For example: <strong>OBS_AUDIO_LEVEL.Youtube</strong>
@@ -152,6 +171,8 @@
 }
                 </code>
             </pre>
+          </li>
+          <li>
             You can trigger pull these values from the
             <a
               href="https://sammi.solutions/docs/commands/trigger-extension"
@@ -159,6 +180,22 @@
               title="Extension Trigger"
               >extension trigger</a
             >
+            <br />
+            <a
+              href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/obs-audio-monitoring/trigger.png"
+              target="_blank"
+              title="Click for Large Image"
+              ><img
+                src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/obs-audio-monitoring/trigger.png"
+                alt="Extension Trigger"
+              />
+            </a>
+            <br />
+            <strong style="color: red">Note:</strong> The extension trigger pull
+            values contain the values at the point the extension trigger was
+            fired, not the current values.
+            <br />
+            <br />
             <ul>
               <li><strong>audiosource</strong> - Name of the source</li>
               <li><strong>trigger_name</strong> - Name of the trigger</li>
@@ -193,7 +230,21 @@
           />
         </a>
       </li>
-    </ul>
+      <!---
+      <li>
+        This is an example of how to use a repeat command to check the audio
+        levels of a particular source.<br />
+        <a
+          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/obs-audio-monitoring/repeat.png"
+          target="_blank"
+          title="Click for Large Image"
+          ><img
+            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/obs-audio-monitoring/repeat.png"
+            alt="Repeat Example"
+          />
+        </a>
+      </li>
+    --></ul>
   </body>
   <footer>
     <p>
