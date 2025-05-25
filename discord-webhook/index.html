@@ -51,13 +51,42 @@
       </li>
       <li>
         Make sure to setup a webhook in your Discord. This can be done by going
-        to the settings of your server, then <strong>Integrations</strong>. From
-        there, select <strong>Webhooks</strong> and then
-        <strong>New Webhook</strong>.
+        to the settings of your server, then <strong>Integrations</strong>.
+        <br />
+        <a
+          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/discord-webhook/discord.png"
+          target="_blank"
+          title="Click for Large Image"
+          ><img
+            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/discord-webhook/discord.png"
+            alt="Discord Webhook Setup"
+          />
+        </a>
+        <br />
+        From there, select <strong>Webhooks</strong> and then
+        <strong>New Webhook</strong>. <br />
+        <a
+          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/discord-webhook/discord1.png"
+          target="_blank"
+          title="Click for Large Image"
+          ><img
+            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/discord-webhook/discord1.png"
+            alt="Discord Webhook Setup"
+          />
+        </a>
       </li>
       <li>
         From there you can select the channel that it should post in, give the
-        webhook a name and even add a profile picture for it.
+        webhook a name and even add a profile picture for it.<br />
+        <a
+          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/discord-webhook/discord2.png"
+          target="_blank"
+          title="Click for Large Image"
+          ><img
+            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/discord-webhook/discord2.png"
+            alt="Discord Webhook Setup"
+          />
+        </a>
       </li>
       <li>
         Once completed, be sure to copy the <strong>Webhook URL</strong> as
@@ -92,6 +121,11 @@
         right clicking the thread and selecting <strong>Copy Thread ID</strong>.
       </li>
       <li>
+        If the <strong>Message</strong> is over 2000 characters (Discord Message
+        Limit), the extension will automatically split the message up into
+        multiple messages.
+      </li>
+      <li>
         <strong>Discord: Message</strong> - Sends a simple plain text message to
         the webhook.
         <ul>
@@ -117,7 +151,10 @@
           <li>
             <strong>Source Name</strong> - This is the name of your scene,
             source or group. You can select it from the drop down menu or type
-            in the box.
+            in the box. <br />
+            <strong style="color: red">Note:</strong> You can use
+            <strong>/$global.Main.current_scene$/</strong> to take a screenshot
+            of the current scene dynamically.
           </li>
           <li>
             <strong>Message</strong> - This is an optional message to send with
