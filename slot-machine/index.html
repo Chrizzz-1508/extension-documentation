@@ -155,6 +155,12 @@
         </a>
       </li>
       <li>
+        There are predefined <strong>Prize</strong> buttons with all of the
+        Prize triggers already set, on the right hand side of the deck. You can
+        add anything in the respective buttons if you want something to happen
+        for each win
+      </li>
+      <li>
         By default all of the slot chat message commands are turned off in the
         respective <strong>Prize</strong> buttons in the deck. If you want to
         turn on any messages for different prizes, you can do so in each button
@@ -197,15 +203,33 @@
         The images <strong style="color: red">MUST</strong> be in the format
         <strong>&lt;number&gt;_&lt;name&gt;.png</strong><br />
         <br />
-        After you've done that, you can edit the symbol names (these are the
-        &lt;name&gt; you entered above) and prizes associated with them in the
+        If any numbers are missing they will be skipped<br />
+        <br />
+        You are free to add multiple of the same images. The more of them there
+        are, the higher the chance of landing on that image increases.<br />
+        <br />
+        The rotation of the slot wheel is always in the same order that you
+        number the images in the folder.<br />
+        <br />
+        For example, the image would start at some random position, let's say
+        Melon and then swap to the next image.<br />
+        <br />
+        If your list looked like 1_Diamond, 2_Melon, 3_Diamond, 4_Grapes,
+        5_Orange, 6_Cherry<br />
+        <br />
+        The rotation would go Melon > Diamond > Grapes > Orange > Cherry >
+        Diamond > Melon<br />
+        <br />
+        After you've added any images you want, you can edit the symbol names
+        (this is the <strong>&lt;name&gt;</strong> you entered above) and
+        <strong>Prize Names</strong> associated with them in the
         <strong>Settings</strong> button then restart SAMMI
       </li>
       <li>
         You can then create your own buttons to manage the prizes, if you set an
         extension trigger for them in the <strong>Settings</strong> button<br />
-        You can use the existing <strong>Prize</strong> buttons in the deck as
-        an example
+        You can use the existing <strong>Prize</strong> buttons on the right
+        side of the deck as an example
         <ul>
           <li>
             Set an
@@ -274,16 +298,22 @@
         </ul>
       </li>
       <li>
-        You can then trigger an
+        If you want to test any rewards you have setup, there is a
+        <strong>Slots Test Button</strong> that lets you set any combination of
+        slot symbols for testing that the right prize is rewarded and that your
+        extension triggers work
+      </li>
+      <li>
+        You can add an
         <a
           href="https://sammi.solutions/docs/commands/trigger-extension"
           target="_blank"
           title="Trigger Extension Trigger"
           >extension trigger</a
         >
-        with the name <strong>SLOTS MESSAGE *</strong> which will automatically
-        wait 7 seconds and then send your specified chat message (so as not to
-        spoil the result from any delay)<br />
+        command with the name <strong>SLOTS MESSAGE *</strong> which will
+        automatically wait 7 seconds and then send your specified chat message
+        (so as not to spoil the result from any delay)<br />
         <a
           href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/extensiontrigger.png"
           target="_blank"
