@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pulsoid for SAMMI</title>
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/chrizzz-profile_image-300x300.png"
+            />
+        <link
+            rel="stylesheet"
+            href="https://Chrizzz-1508.github.io/extension-documentation/styles.css"
+            />
+    </head>
+    <body>
+        <h1 class="heading">
+            Pulsoid for SAMMI
+            <img
+                src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/chrizzz-profile_image-300x300.png"
+                class="img-left"
+                />
+        </h1>
+        <h2 class="sub-heading">
+            Read and react to your heartrate in SAMMI using Pulsoid
+        </h2>
+        <p>
+            This SAMMI extension lets you read and react to your heartrate within SAMMI with any Pulsoid Heart Rate Monitor.<br>
+            For more information about Pulsoid, please check out there page <strong><a href="https://pulsoid.net/">here</a></strong>.
+        </p>
+        <h2 class="sub-heading-1">Setup</h2>
+        <ol>
+        <li>Inside SAMMI go to "SAMMI Bridge", select "Install an Extension" and then the "Pulsoid.sef" file</li>
+        <a
+            href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/pulsoid/install_1.png"
+            target="_blank"
+            title="Click for Large Image"
+            ><img
+            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/pulsoid/install_1.png"
+            alt="Install 1"
+            />
+        </a>
+        <a
+            href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/pulsoid/install_2.png"
+            target="_blank"
+            title="Click for Large Image"
+            ><img
+            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/pulsoid/install_2.png"
+            alt="Install 2"
+            />
+        </a>
+        <li>The pulsoid website will open automatically. Login with your Pulsoid account and get an authorization token and copy it</li>
+        <a
+            href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/pulsoid/authorization_1.png"
+            target="_blank"
+            title="Click for Large Image"
+            ><img
+            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/pulsoid/authorization_1.png"
+            alt="Authorization 1"
+            />
+        </a>
+        <a
+            href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/pulsoid/authorization_2.png"
+            target="_blank"
+            title="Click for Large Image"
+            ><img
+            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/pulsoid/authorization_2.png"
+            alt="Authorization 2"
+            />
+        </a>
+        <li>Paste the authorization token inside SAMMI and press "OK"</li>
+        <a
+            href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/pulsoid/authorization_3.png"
+            target="_blank"
+            title="Click for Large Image"
+            ><img
+            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/pulsoid/authorization_3.png"
+            alt="Authorization 3"
+            />
+        </a>
+        </p>
+        <h2 class="sub-heading-1">How to use:</h2>
+        <ol>
+        <li>Create a new button inside SAMMI with the "Pulsoid" Trigger</li>
+        <a
+            href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/pulsoid/trigger.png"
+            target="_blank"
+            title="Click for Large Image"
+            ><img
+            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/pulsoid/trigger.png"
+            alt="Trigger"
+            />
+        </a>
+        <li>Inside the button commands, you can use a "Trigger Pull Data" command to access the following values of the heartrate event</li>
+        <a
+            href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/pulsoid/payload.png"
+            target="_blank"
+            title="Click for Large Image"
+            ><img
+            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/pulsoid/payload.png"
+            alt="Payload"
+            />
+        </a>
+        <li>Create your own features with it.<br>Here is a small example on how you can update an OBS Text Source to show your current heartrate.<br>This is possible since you can access the heart rate from everywhere by using PULSOID.heart_rate</li>
+        <a
+            href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/pulsoid/obs_update.png"
+            target="_blank"
+            title="Click for Large Image"
+            ><img
+            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/pulsoid/obs_update.png"
+            alt="OBS Update"
+            />
+        </a>
+        <li>You can also check out the connection status and the current heartrate inside the bridge</li>
+        <a
+            href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/pulsoid/bridge.png"
+            target="_blank"
+            title="Click for Large Image"
+            ><img
+            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/pulsoid/bridge.png"
+            alt="Bridge"
+            />
+        </a>
+        </p>
+    </body>
+    <footer>
+        <p>
+            Extension by
+            <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a><br>
+            Docs created by
+            <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a><br>
+            2025
+        </p>
+    </footer>
+</html>
