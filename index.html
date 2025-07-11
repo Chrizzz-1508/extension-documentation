@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Extension Documentation</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static-cdn.jtvnw.net/jtv_user_pictures/3887579e-7b84-403e-9ed1-cc17c9789b1e-profile_image-300x300.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://Chrizzz-1508.github.io/extension-documentation/styles.css"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #1e1e1e;
+        color: white;
+        margin: 0;
+        padding: 2rem;
+      }
+
+      .heading {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .input-box {
+        padding: 5px;
+        width: 100%;
+        margin-bottom: 3rem;
+        position: relative;
+      }
+
+      #searchInput {
+        width: 300px;
+        padding: 10px;
+        font-size: 16px;
+        position: absolute;
+        right: 7%;
+        border: none;
+        border-radius: 5px;
+      }
+
+      .grid {
+        display: grid;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        align-items: center;
+      }
+
+      .grid > div {
+        padding: 10px;
+        text-align: center;
+        background-color: #333;
+        border-radius: 10px;
+        transition: background-color 0.3s;
+      }
+
+      .grid > div:hover {
+        background-color: #444;
+        cursor: pointer;
+      }
+
+      .tile-text {
+        margin-top: 10px;
+        font-size: 1rem;
+        font-weight: bold;
+        color: white;
+      }
+
+      .tile-image {
+        width: 100%;
+        max-height: 150px;
+        object-fit: contain;
+        border-radius: 5px;
+        background-color: #1a1a1a;
+      }
+
+      .hidden {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="heading">Extension Documentation</h1>
+
+    <div class="input-box">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search for an Extension..."
+        oninput="filterGrid()"
+      />
+    </div>
+
+    <div class="grid">
+      <div class="grid tile-1" onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/clipshow'">
+        <img class="tile-image" src="https://chrizzz-1508.github.io/extension-documentation/thumbnails/clipshow.png" alt="Clip Show" />
+        <h2 class="tile-text">Clip Show</h2>
+      </div>
+      <div class="grid tile-2" onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/crowd-control'">
+        <img class="tile-image" src="https://chrizzz-1508.github.io/extension-documentation/thumbnails/crowd-control.png" alt="Crowd Control" />
+        <h2 class="tile-text">Crowd Control</h2>
+      </div>
+      <div class="grid tile-3" onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/discord-webhook'">
+        <img class="tile-image" src="https://chrizzz-1508.github.io/extension-documentation/thumbnails/discord-webhook.png" alt="Discord Webhook" />
+        <h2 class="tile-text">Discord Webhook</h2>
+      </div>
+      <div class="grid tile-4" onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/get-random-clip'">
+        <img class="tile-image" src="https://chrizzz-1508.github.io/extension-documentation/thumbnails/get-random-clip.png" alt="Get Random Clip" />
+        <h2 class="tile-text">Get Random Clip</h2>
+      </div>
+      <div class="grid tile-5" onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/obs-audio-monitoring'">
+        <img class="tile-image" src="https://chrizzz-1508.github.io/extension-documentation/thumbnails/obs-audio-monitoring.png" alt="OBS Audio Monitoring" />
+        <h2 class="tile-text">OBS Audio Monitoring</h2>
+      </div>
+      <div class="grid tile-6" onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/onscreen-timer'">
+        <img class="tile-image" src="https://chrizzz-1508.github.io/extension-documentation/thumbnails/onscreen-timer.png" alt="Onscreen Timer" />
+        <h2 class="tile-text">Onscreen Timer</h2>
+      </div>
+      <div class="grid tile-7" onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/philips-hue-lights'">
+        <img class="tile-image" src="https://chrizzz-1508.github.io/extension-documentation/thumbnails/philips-hue-lights.png" alt="Philips Hue Lights" />
+        <h2 class="tile-text">Philips Hue Lights</h2>
+      </div>
+      <div class="grid tile-8" onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/pulsoid'">
+        <img class="tile-image" src="https://chrizzz-1508.github.io/extension-documentation/thumbnails/pulsoid.png" alt="Pulsoid" />
+        <h2 class="tile-text">Pulsoid</h2>
+      </div>
+      <div class="grid tile-9" onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/slot-machine'">
+        <img class="tile-image" src="https://chrizzz-1508.github.io/extension-documentation/thumbnails/slot-machine.png" alt="Slot Machine" />
+        <h2 class="tile-text">Slot Machine</h2>
+      </div>
+      <div class="grid tile-10" onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/stream-credits'">
+        <img class="tile-image" src="https://chrizzz-1508.github.io/extension-documentation/thumbnails/stream-credits.png" alt="Stream Credits" />
+        <h2 class="tile-text">Stream Credits</h2>
+      </div>
+      <div class="grid tile-11" onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/voicemod'">
+        <img class="tile-image" src="https://chrizzz-1508.github.io/extension-documentation/thumbnails/voicemod.png" alt="Voicemod" />
+        <h2 class="tile-text">Voicemod</h2>
+      </div>
+      <div class="grid tile-12" onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/websocket-connector'">
+        <img class="tile-image" src="https://chrizzz-1508.github.io/extension-documentation/thumbnails/websocket-connector.png" alt="WebSocket Connector" />
+        <h2 class="tile-text">WebSocket Connector</h2>
+      </div>
+    </div>
+
+    <script>
+      function filterGrid() {
+        const searchInput = document
+          .getElementById("searchInput")
+          .value.toLowerCase();
+        const gridItems = document.querySelectorAll(".grid > div");
+
+        gridItems.forEach((item) => {
+          const h2 = item.querySelector("h2");
+          const text = h2 ? h2.textContent || h2.innerText : "";
+
+          if (text.toLowerCase().includes(searchInput)) {
+            item.classList.remove("hidden");
+          } else {
+            item.classList.add("hidden");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
