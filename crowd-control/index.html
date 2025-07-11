@@ -1,137 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Crowd Control for SAMMI</title>
-  <link
-    rel="icon"
-    type="image/x-icon"
-    href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/chrizzz-profile_image-300x300.png"
-  />
-  <link
-    rel="stylesheet"
-    href="https://Chrizzz-1508.github.io/extension-documentation/styles.css"
-  />
-</head>
-<body>
-  <h1 class="heading">
-    Crowd Control for SAMMI
-    <img
-      src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/chrizzz-profile_image-300x300.png"
-      class="img-left"
-    />
-  </h1>
-  <h2 class="sub-heading">
-    Control your game experience through crowd interaction using Crowd Control and SAMMI
-  </h2>
-  <h2 class="sub-heading-1">Setup</h2>
-        
-        <ol><li>Inside SAMMI go to "SAMMI Bridge", select "Install an Extension" and then the "Crowd Control.sef" file</li>
-        <a
-            href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/crowd-control/install_1.png"
-            target="_blank"
-            title="Click for Large Image"
-            ><img
-            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/crowd-control/install_1.png"
-            alt="Install 1"
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Crowd Control for SAMMI</title>
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/chrizzz-profile_image-300x300.png"
             />
-        </a>
-        <a
-            href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/crowd-control/install_2.png"
-            target="_blank"
-            title="Click for Large Image"
-            ><img
-            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/crowd-control/install_2.png"
-            alt="Install 2"
+        <link
+            rel="stylesheet"
+            href="https://Chrizzz-1508.github.io/extension-documentation/styles.css"
             />
-        </a>
-		
-  <li>Select the platform, username, game, and pack in the Bridge.</li>
-  <a
-    href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/crowd-control/bridge.png"
-    target="_blank"
-    title="Click for Large Image"
-    ><img
-      src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/crowd-control/bridge.png"
-      alt="Bridge Interface"
-    />
-  </a>
-	</ol>
-	</p>
-  <h2 class="sub-heading-1">Crowd Control Commands</h2>
-<p>
-<ol>
-  SAMMI offers several commands for Crowd Control. These commands may take a short time to execute. It is recommended to use <strong>Wait Until Variable Exists</strong> for handling results.
-</p>
-<table style="width: 100%; border-collapse: collapse; margin-bottom: 2rem;">
-  <thead style="background-color: #444; color: white;">
-    <tr>
-      <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Command</th>
-      <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: #2c2c2c;">
-      <td style="border: 1px solid #ddd; padding: 12px;">Get Effects for current game</td>
-      <td style="border: 1px solid #ddd; padding: 12px;">Returns an object with all the available effects for the selected game/pack in the bridge.</td>
-    </tr>
-    <tr>
-      <td style="border: 1px solid #ddd; padding: 12px;">Get Game List</td>
-      <td style="border: 1px solid #ddd; padding: 12px;">Returns an object array with all available Crowd Control games.</td>
-    </tr>
-    <tr style="background-color: #2c2c2c;">
-      <td style="border: 1px solid #ddd; padding: 12px;">Get Connection Status</td>
-      <td style="border: 1px solid #ddd; padding: 12px;">Returns the connection status, returning 0 if not connected, and 1 when connected.</td>
-    </tr>
-    <tr>
-      <td style="border: 1px solid #ddd; padding: 12px;">Toggle Connection Status</td>
-      <td style="border: 1px solid #ddd; padding: 12px;">Changes your connection status based on the bridge settings. Returns 0 if not connected or 1 when connected.</td>
-    </tr>
-  </tbody>
-</table>
-</ol>
-<h2 class="sub-heading-1">Crowd Control Triggers</h2>
-<p>
-<ol>
-  The following triggers are natively available in SAMMI-
-</p>
-<table style="width: 100%; border-collapse: collapse; margin-bottom: 2rem;">
-  <thead style="background-color: #444; color: white;">
-    <tr>
-      <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Trigger</th>
-      <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: #2c2c2c;">
-      <td style="border: 1px solid #ddd; padding: 12px;">Effect Success</td>
-      <td style="border: 1px solid #ddd; padding: 12px;">Triggered whenever an effect is successfully activated.</td>
-    </tr>
-    <tr>
-      <td style="border: 1px solid #ddd; padding: 12px;">Effect Failure</td>
-      <td style="border: 1px solid #ddd; padding: 12px;">Triggered whenever an effect fails to trigger.</td>
-    </tr>
-    <tr style="background-color: #2c2c2c;">
-      <td style="border: 1px solid #ddd; padding: 12px;">Effect Request</td>
-      <td style="border: 1px solid #ddd; padding: 12px;">Triggered whenever an effect is requested. Followed by either Effect Success or Effect Failure.</td>
-    </tr>
-    <tr>
-      <td style="border: 1px solid #ddd; padding: 12px;">Timed Effect Update</td>
-      <td style="border: 1px solid #ddd; padding: 12px;">Triggered when a timed effect is updated, such as beginning, pausing, or resuming.</td>
-    </tr>
-  </tbody>
-</table>
-</ol>
-
-</body>
-<footer>
-  <p>
-    Extension by
-    <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a><br>
-    Docs created by
-    <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a><br>
-    2025
-  </p>
-</footer>
+    </head>
+    <body>
+        <h1 class="heading">
+            Crowd Control for SAMMI
+            <img
+                src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/chrizzz-profile_image-300x300.png"
+                class="img-left"
+                />
+        </h1>
+        <h2 class="sub-heading">
+            Control your game experience through crowd interaction using Crowd Control and SAMMI
+        </h2>
+        <h2 class="sub-heading-1">Setup</h2>
+        <ol>
+            <li>Inside SAMMI go to "SAMMI Bridge", select "Install an Extension" and then the "Crowd Control.sef" file</li>
+            <a
+                href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/crowd-control/install_1.png"
+                target="_blank"
+                title="Click for Large Image"
+                ><img
+                src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/crowd-control/install_1.png"
+                alt="Install 1"
+                />
+            </a>
+            <a
+                href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/crowd-control/install_2.png"
+                target="_blank"
+                title="Click for Large Image"
+                ><img
+                src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/crowd-control/install_2.png"
+                alt="Install 2"
+                />
+            </a>
+            <li>Select the platform, username, game, and pack in the Bridge.</li>
+            <a
+                href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/crowd-control/bridge.png"
+                target="_blank"
+                title="Click for Large Image"
+                ><img
+                src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/crowd-control/bridge.png"
+                alt="Bridge Interface"
+                />
+            </a>
+        </ol>
+        </p>
+        <h2 class="sub-heading-1">Crowd Control Commands</h2>
+        <p>
+        <ol>
+            SAMMI offers several commands for Crowd Control. These commands may take a short time to execute. It is recommended to use <strong>Wait Until Variable Exists</strong> for handling results.
+            </p>
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 2rem;">
+                <thead style="background-color: #444; color: white;">
+                    <tr>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Command</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background-color: #2c2c2c;">
+                        <td style="border: 1px solid #ddd; padding: 12px;">Get Effects for current game</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Returns an object with all the available effects for the selected game/pack in the bridge.</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Get Game List</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Returns an object array with all available Crowd Control games.</td>
+                    </tr>
+                    <tr style="background-color: #2c2c2c;">
+                        <td style="border: 1px solid #ddd; padding: 12px;">Get Connection Status</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Returns the connection status, returning 0 if not connected, and 1 when connected.</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Toggle Connection Status</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Changes your connection status based on the bridge settings. Returns 0 if not connected or 1 when connected.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </ol>
+        <h2 class="sub-heading-1">Crowd Control Triggers</h2>
+        <p>
+        <ol>
+            The following triggers are natively available in SAMMI-
+            </p>
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 2rem;">
+                <thead style="background-color: #444; color: white;">
+                    <tr>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Trigger</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background-color: #2c2c2c;">
+                        <td style="border: 1px solid #ddd; padding: 12px;">Effect Success</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Triggered whenever an effect is successfully activated.</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Effect Failure</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Triggered whenever an effect fails to trigger.</td>
+                    </tr>
+                    <tr style="background-color: #2c2c2c;">
+                        <td style="border: 1px solid #ddd; padding: 12px;">Effect Request</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Triggered whenever an effect is requested. Followed by either Effect Success or Effect Failure.</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Timed Effect Update</td>
+                        <td style="border: 1px solid #ddd; padding: 12px;">Triggered when a timed effect is updated, such as beginning, pausing, or resuming.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </ol>
+    </body>
+    <footer>
+        <p>
+            Extension by
+            <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a><br>
+            Docs created by
+            <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a><br>
+            2025
+        </p>
+    </footer>
 </html>
