@@ -9,10 +9,6 @@
       type="image/x-icon"
       href="https://static-cdn.jtvnw.net/jtv_user_pictures/3887579e-7b84-403e-9ed1-cc17c9789b1e-profile_image-300x300.png"
     />
-    <link
-      rel="stylesheet"
-      href="https://Chrizzz-1508.github.io/extension-documentation/styles.css"
-    />
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -50,6 +46,7 @@
         max-width: 1200px;
         margin: 0 auto;
         gap: 1rem;
+        height: 150px;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         align-items: center;
       }
@@ -57,29 +54,36 @@
       .grid > div {
         padding: 10px;
         text-align: center;
-        background-color: #333;
-        border-radius: 10px;
+        background-color: #3ec6e0; /* subtle sky blueish */
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
         transition: background-color 0.3s;
-      }
-
-      .grid > div:hover {
-        background-color: #444;
-        cursor: pointer;
+        border-radius: 10px;
+        height: 150px;
+        position: relative;
       }
 
       .tile-text {
-        margin-top: 10px;
-        font-size: 1rem;
+        font-size: 0px;
         font-weight: bold;
         color: white;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-shadow: 2px 2px 4px #000;
+        text-align: center;
+        pointer-events: none;
       }
 
-      .tile-image {
-        width: 100%;
-        max-height: 150px;
-        object-fit: contain;
-        border-radius: 5px;
-        background-color: #1a1a1a;
+      .grid > div:hover .tile-text {
+        font-size: 1rem;
+      }
+
+      .grid > div:hover {
+        cursor: pointer;
+        filter: brightness(1.1);
       }
 
       .hidden {
@@ -100,52 +104,88 @@
     </div>
 
     <div class="grid">
-      <div class="grid tile-1" onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/clipshow'">
-        <img class="tile-image" src="https://chrizzz-1508.github.io/extension-documentation/thumbnails/clipshow.png" alt="Clip Show" />
+      <div
+        class="tile-1"
+        onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/clipshow'"
+        style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/clipshow_icon.png')"
+      >
         <h2 class="tile-text">Clip Show</h2>
       </div>
-      <div class="grid tile-2" onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/crowd-control'">
-        <img class="tile-image" src="https://chrizzz-1508.github.io/extension-documentation/thumbnails/crowd-control.png" alt="Crowd Control" />
+      <div
+        class="tile-2"
+        onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/crowd-control'"
+        style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/crowd_control_icon.png')"
+      >
         <h2 class="tile-text">Crowd Control</h2>
       </div>
-      <div class="grid tile-3" onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/discord-webhook'">
-        <img class="tile-image" src="https://chrizzz-1508.github.io/extension-documentation/thumbnails/discord-webhook.png" alt="Discord Webhook" />
+      <div
+        class="tile-3"
+        onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/discord-webhook'"
+        style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/discord_webhook_icon.png')"
+      >
         <h2 class="tile-text">Discord Webhook</h2>
       </div>
-      <div class="grid tile-4" onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/get-random-clip'">
-        <img class="tile-image" src="https://chrizzz-1508.github.io/extension-documentation/thumbnails/get-random-clip.png" alt="Get Random Clip" />
+      <div
+        class="tile-4"
+        onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/get-random-clip'"
+        style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/get_random_clip_icon.png')"
+      >
         <h2 class="tile-text">Get Random Clip</h2>
       </div>
-      <div class="grid tile-5" onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/obs-audio-monitoring'">
-        <img class="tile-image" src="https://chrizzz-1508.github.io/extension-documentation/thumbnails/obs-audio-monitoring.png" alt="OBS Audio Monitoring" />
+      <div
+        class="tile-5"
+        onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/obs-audio-monitoring'"
+        style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/audio_monitoring_icon.png')"
+      >
         <h2 class="tile-text">OBS Audio Monitoring</h2>
       </div>
-      <div class="grid tile-6" onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/onscreen-timer'">
-        <img class="tile-image" src="https://chrizzz-1508.github.io/extension-documentation/thumbnails/onscreen-timer.png" alt="Onscreen Timer" />
+      <div
+        class="tile-6"
+        onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/onscreen-timer'"
+        style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/onscreen_timer_icon.png')"
+      >
         <h2 class="tile-text">Onscreen Timer</h2>
       </div>
-      <div class="grid tile-7" onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/philips-hue-lights'">
-        <img class="tile-image" src="https://chrizzz-1508.github.io/extension-documentation/thumbnails/philips-hue-lights.png" alt="Philips Hue Lights" />
+      <div
+        class="tile-7"
+        onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/philips-hue-lights'"
+        style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/hue_icon.png')"
+      >
         <h2 class="tile-text">Philips Hue Lights</h2>
       </div>
-      <div class="grid tile-8" onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/pulsoid'">
-        <img class="tile-image" src="https://chrizzz-1508.github.io/extension-documentation/thumbnails/pulsoid.png" alt="Pulsoid" />
+      <div
+        class="tile-8"
+        onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/pulsoid'"
+        style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/pulsoid_icon.png')"
+      >
         <h2 class="tile-text">Pulsoid</h2>
       </div>
-      <div class="grid tile-9" onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/slot-machine'">
-        <img class="tile-image" src="https://chrizzz-1508.github.io/extension-documentation/thumbnails/slot-machine.png" alt="Slot Machine" />
+      <div
+        class="tile-9"
+        onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/slot-machine'"
+        style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/slots_icon.png')"
+      >
         <h2 class="tile-text">Slot Machine</h2>
       </div>
-      <div class="grid tile-10" onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/stream-credits'">
-        <img class="tile-image" src="https://chrizzz-1508.github.io/extension-documentation/thumbnails/stream-credits.png" alt="Stream Credits" />
+      <div
+        class="tile-10"
+        onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/stream-credits'"
+        style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/streamcredits_icon.png')"
+      >
         <h2 class="tile-text">Stream Credits</h2>
       </div>
-      <div class="grid tile-11" onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/voicemod'">
-        <img class="tile-image" src="https://chrizzz-1508.github.io/extension-documentation/thumbnails/voicemod.png" alt="Voicemod" />
+      <div
+        class="tile-11"
+        onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/voicemod'"
+        style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/voicemod_icon.png')"
+      >
         <h2 class="tile-text">Voicemod</h2>
       </div>
-      <div class="grid tile-12" onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/websocket-connector'">
-        <img class="tile-image" src="https://chrizzz-1508.github.io/extension-documentation/thumbnails/websocket-connector.png" alt="WebSocket Connector" />
+      <div
+        class="tile-12"
+        onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/websocket-connector'"
+        style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/websocket_icon.png')"
+      >
         <h2 class="tile-text">WebSocket Connector</h2>
       </div>
     </div>
