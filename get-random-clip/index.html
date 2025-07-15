@@ -1,32 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Get Random Clip</title>
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/chrizzz-profile_image-300x300.png"
-    />
-    <link
-      rel="stylesheet"
-      href="https://Chrizzz-1508.github.io/extension-documentation/styles.css"
-    />
+    <link rel="stylesheet" href="https://Chrizzz-1508.github.io/extension-documentation/styles.css" />
   </head>
   <body>
-    <h1 class="heading">
-      Get Random Clip<img
-        src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/chrizzz-profile_image-300x300.png"
-        class="img-left"
-      /><img
-        src="https://sammi.solutions/assets/images/extensions/get_random_clip_ss1.png"
-        class="img-right"
-      />
-    </h1>
-    <h2 class="sub-heading">
-      Grabs a random clip from a specified Twitch Channel
-    </h2>
+	<button class="all-extensions" onclick="location.href='https://chrizzz-1508.github.io/extension-documentation/'">All Extensions</button>
+	<button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+
+
+    <h1 class="heading">Get Random Clip</h1>
     <p>
       Getting a random clip and displaying it in your OBS using SAMMI has never
       been easier! Check out the features below!
@@ -34,128 +19,99 @@
 
     <h2 class="sub-heading-1">Features</h2>
     <ul>
-      <li>
-        Fully customisable request to Twitch including; amount of clips,
-        timeframe to search, minimum views and cutoff length
-      </li>
-      <li>
-        Pre-configured buttons to trigger on Raids and '!so @user' in chat
-      </li>
-      <li>Auto setup button for creating the OBS scene and source needed</li>
-      <li>Ability to add more actions when the clip plays</li>
-      <li>SAMMI commands so you can create your own buttons</li>
+      <li>Fully customizable request to Twitch including amount, timeframe, min views, cutoff</li>
+      <li>Pre-configured buttons for Raids and '!so @user'</li>
+      <li>Auto setup button for OBS scene and source</li>
+      <li>Ability to add custom actions on clip play</li>
+      <li>SAMMI commands to create your own buttons</li>
     </ul>
 
     <h2 class="sub-heading-1">Setup</h2>
     <ol>
-      <li>
-        Install the extension. Refer to the SAMMI
-        <a href="https://sammi.solutions/extensions/install" target="_blank"
-          >documentation</a
-        >
-        on how to install an extension.
-      </li>
-      <li>Ensure OBS is open and connected to SAMMI</li>
-      <li>
-        The extension should now auto run the setup and will be usable as is
-        with the default values in the <strong>SETTINGS</strong> button and the
-        two default buttons for Raids and '!so @user' in chat
-      </li>
-      <li>
-        Nest the scene that the setup creates in whichever scenes you want the
-        clip to play
-        <br />
-        <a
-          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/get-random-clip/deck.png"
-          target="_blank"
-          title="Click for Large Image"
-          ><img
-            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/get-random-clip/deck.png"
-            alt="View of the Deck"
-          />
-        </a>
-      </li>
+      <li>Install the extension via the <a href="https://sammi.solutions/extensions/install" target="_blank">SAMMI docs</a></li>
+      <li>Make sure OBS is connected to SAMMI</li>
+      <li>The extension auto-runs and creates default buttons</li>
+      <li>Nest the scene where you want the clip to play</li>
+      <br />
+      <a href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/get-random-clip/deck.png" target="_blank">
+        <img src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/get-random-clip/deck.png" alt="Deck View" />
+      </a>
     </ol>
 
-    <h2 class="sub-heading-1">Customisation</h2>
+    <h2 class="sub-heading-1">Customization</h2>
     <ul>
-      <li>
-        You can customise the default values that the extension uses to get
-        clips from Twitch by editing the variables in the
-        <strong>SETTINGS</strong> button
-        <ul>
-          <li>
-            <strong>Amount</strong> - Default value for how many clips are being
-            pulled (recommended to leave this at 100)
-          </li>
-          <li>
-            <strong>Timeframe</strong> - Default value for how old a clip can be
-            (for example 365 => clip is from the last 365 days)
-          </li>
-          <li>
-            <strong>Min_views</strong> - Default value for how many views a clip
-            needs to have before it is pulled
-          </li>
-          <li>
-            <strong>Cutoff_length</strong> - The maximum amount of time in
-            seconds which a clip should play until it's cutoff
-          </li>
-        </ul>
-        <a
-          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/get-random-clip/settings.png"
-          target="_blank"
-          title="Click for Large Image"
-          ><img
-            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/get-random-clip/settings.png"
-            alt="SETTINGS Button"
-        /></a>
-      </li>
-      <li>
-        You can add various other actions that happen when the clip plays by
-        adding them to the
-        <strong>Extension Interface: Play Clip</strong> button <br />
-        <br />
-        Make sure to add everything you want to happen before/as the clip starts
-        before the 'Wait for Timeout' and everything you want to happen after
-        the clip ends after the 'Wait for Timeout'<br />
-        <a
-          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/get-random-clip/playclip.png"
-          target="_blank"
-          title="Click for Large Image"
-          ><img
-            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/get-random-clip/playclip.png"
-            alt="Play Clip Button"
-        /></a>
-      </li>
-      <li>
-        If you don't want to use the default Raid and '!so @user' buttons in the
-        deck, you can delete the triggers from the buttons
-      </li>
-      <li>
-        Remember that if you'd like, you can use the 'Get Random Clip' command
-        with your own values or ones from the <strong>SETTINGS</strong> button
-        along with the 'Play Clip' command using the data returned from the 'Get
-        Random Clip' command in your own button <br />
-        <a
-          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/get-random-clip/example.png"
-          target="_blank"
-          title="Click for Large Image"
-          ><img
-            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/get-random-clip/example.png"
-            alt="Example using the two commands"
-        /></a>
-      </li>
+      You can customize the default values that the extension uses to get
+      clips from Twitch by editing the variables in the <strong>SETTINGS</strong> button:
     </ul>
+
+    <table class="settings-table">
+      <thead>
+        <tr>
+          <th>Variable</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Amount</td>
+          <td>Default number of clips to pull (recommended: 100)</td>
+        </tr>
+        <tr>
+          <td>Timeframe</td>
+          <td>Maximum age of clips in days (e.g. 365 = past year)</td>
+        </tr>
+        <tr>
+          <td>Min_views</td>
+          <td>Minimum view count required for a clip</td>
+        </tr>
+        <tr>
+          <td>Cutoff_length</td>
+          <td>Maximum duration (in seconds) the clip is allowed to play</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <a href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/get-random-clip/settings.png" target="_blank">
+      <img src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/get-random-clip/settings.png" alt="Settings" />
+    </a>
+
+    Add your actions in the <strong>Play Clip</strong> button.
+	<br>
+    <a href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/get-random-clip/playclip.png" target="_blank">
+      <img src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/get-random-clip/playclip.png" alt="Play Clip" />
+    </a>
+
+    Feel free to delete the default buttons or use custom ones
+
+    You can also call <strong>'Get Random Clip'</strong> and <strong>'Play Clip'</strong> manually
+	<br>
+    <a href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/get-random-clip/example.png" target="_blank">
+      <img src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/get-random-clip/example.png" alt="Command Example" />
+    </a>
+
+    <footer>
+      <p>
+        Extension by <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a><br>
+        Docs by <a href="https://poetryandlilies.itch.io" target="_blank">PoetryandLilies</a><br>
+        Design by <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a><br>
+        2025
+      </p>
+    </footer>
+
+    <script>
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+
+      function toggleTheme() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+      }
+    </script>
   </body>
-  <footer>
-    <p>
-      Extension by
-      <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a><br />
-      Docs created by
-      <a href="https://poetryandlilies.itch.io" target="_blank"
-        >PoetryandLilies</a
-      ><br />
-      2025
-    </p>
-  </footer>
 </html>
