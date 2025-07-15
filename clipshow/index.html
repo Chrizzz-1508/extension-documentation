@@ -1,45 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clipshow</title>
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/chrizzz-profile_image-300x300.png"
-    />
-    <link
-      rel="stylesheet"
-      href="https://Chrizzz-1508.github.io/extension-documentation/styles.css"
-    />
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/chrizzz-profile_image-300x300.png" />
+    <link rel="stylesheet" href="https://Chrizzz-1508.github.io/extension-documentation/styles.css" />
   </head>
   <body>
+    <button class="all-extensions" onclick="location.href='https://chrizzz-1508.github.io/extension-documentation/'">All Extensions</button>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+
     <h1 class="heading">
-      Clipshow<img
-        src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/chrizzz-profile_image-300x300.png"
-        class="img-left"
-      /><img
-        src="https://sammi.solutions/assets/images/extensions/clipshow_ss1.png"
-        class="img-right"
-      />
+      Clipshow
     </h1>
-    <h2 class="sub-heading">
-      Grabs random clips to play on specified scenes in OBS
-    </h2>
-    <p>
-      Ever wanted to display your clips when you change to a specific OBS scene
-      like BRB or Starting soon? This extension has you covered! Check out the
-      features below!
+      Ever wanted to display your clips when you change to a specific OBS scene like BRB or Starting soon? This extension has you covered! Check out the features below!
     </p>
 
     <h2 class="sub-heading-1">Features</h2>
     <ul>
-      <li>
-        Fully customisable request to Twitch including; minimum views & max
-        number of days to get clips from
-      </li>
-      <li>Ability to prioritise clips with higher views</li>
+      <li>Fully customizable request to Twitch including; minimum views & max number of days to get clips from</li>
+      <li>Ability to prioritize clips with higher views</li>
       <li>Set which scenes the clips play on</li>
       <li>Auto setup button for creating the OBS scene and source needed</li>
     </ul>
@@ -48,95 +29,87 @@
     <ol>
       <li>
         Install the extension. Refer to the SAMMI
-        <a href="https://sammi.solutions/extensions/install" target="_blank"
-          >documentation</a
-        >
+        <a href="https://sammi.solutions/extensions/install" target="_blank">documentation</a>
         on how to install an extension.
       </li>
       <li>Ensure OBS is open and connected to SAMMI</li>
       <li>
-        The extension should now auto run the setup and will be usable as is
-        with the default values in the <strong>SETTINGS</strong> button
+        The extension should now auto run the setup and will be usable as is with the default values in the <strong>SETTINGS</strong> button
       </li>
-
       <li>
-        Nest the scene that the setup creates in whichever scenes you specify in
-        the <strong>SETTINGS</strong> button<br />
-        <a
-          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/clipshow/deck.png"
-          target="_blank"
-          title="Click for Large Image"
-          ><img
-            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/clipshow/deck.png"
-            alt="View of the Deck"
-          />
+        Nest the scene that the setup creates in whichever scenes you specify in the <strong>SETTINGS</strong> button<br>
+        <a href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/clipshow/deck.png" target="_blank" title="Click for Large Image">
+          <img src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/clipshow/deck.png" alt="View of the Deck" />
         </a>
       </li>
     </ol>
 
-    <h2 class="sub-heading-1">Customisation</h2>
-    <ul>
-      <li>
-        <strong
-          >Customising any settings requires a SAMMI restart to take
-          effect</strong
-        >
-      </li>
-      <li>
-        You can customise the default values that the extension uses to get
-        clips from Twitch by editing the variables in the
-        <strong>SETTINGS</strong> button
-        <ul>
-          <li>
-            <strong>broadcaster_name</strong> - This only needs to be changed if
-            you use a bot account
-          </li>
-          <li>
-            <strong>max_days</strong> - Default value for how old a clip can be
-            (for example 365 => clip is from the last 365 days)
-          </li>
-          <li>
-            <strong>Min_views</strong> - Default value for how many views a clip
-            needs to have before it is pulled
-          </li>
-          <li>
-            <strong>scene_names</strong> - This is where you put the names of
-            your scenes from OBS where you want the clips to play
-          </li>
-          <li>
-            <strong>prioritize_views</strong> - Setting this value to
-            <strong>true</strong> will prioritize clips with many views. Setting
-            it to <strong>false</strong> will mean clips play at random as long
-            as they have the minimum views
-          </li>
-          <li>
-            <strong>show_cliptitle</strong> - Setting this value to
-            <strong>true</strong> will show the clip title in chat when it
-            plays. Setting it to <strong>false</strong> will not display the
-            clip title in chat when it plays
-          </li>
-        </ul>
-        <a
-          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/clipshow/settings.png"
-          target="_blank"
-          title="Click for Large Image"
-          ><img
-            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/clipshow/settings.png"
-            alt="SETTINGS Button"
-        /></a>
-      </li>
-    </ul>
-  </body>
+    <h2 class="sub-heading-1">Customization</h2>
 
-  <footer>
-    <p>
-      Extension by
-      <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a><br />
-      Docs created by
-      <a href="https://poetryandlilies.itch.io" target="_blank"
-        >PoetryandLilies</a
-      ><br />
-      2025
-    </p>
-  </footer>
+    <p>You can customize the default values used to fetch clips by editing the variables in the <strong>SETTINGS</strong> button (<strong>Customizing any settings requires a SAMMI restart to take effect.</strong>):</p>
+
+    <table class="settings-table">
+      <thead>
+        <tr>
+          <th>Variable</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>broadcaster_name</td>
+          <td>Only change this if using a bot account</td>
+        </tr>
+        <tr>
+          <td>max_days</td>
+          <td>How old a clip can be (e.g. 365 = past year)</td>
+        </tr>
+        <tr>
+          <td>min_views</td>
+          <td>Minimum views a clip must have</td>
+        </tr>
+        <tr>
+          <td>scene_names</td>
+          <td>Names of the OBS scenes where clips should play</td>
+        </tr>
+        <tr>
+          <td>prioritize_views</td>
+          <td><code>true</code> = show most viewed clips first; <code>false</code> = random clips above min_views</td>
+        </tr>
+        <tr>
+          <td>show_cliptitle</td>
+          <td><code>true</code> = show clip title in chat; <code>false</code> = do not show title</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <a href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/clipshow/settings.png" target="_blank" title="Click for Large Image">
+      <img src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/clipshow/settings.png" alt="SETTINGS Button" />
+    </a>
+
+    <footer>
+      <p>
+        Extension by <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a><br>
+        Docs created by <a href="https://poetryandlilies.itch.io" target="_blank">PoetryandLilies</a><br>
+        Design by <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a><br>
+        2025
+      </p>
+    </footer>
+
+    <script>
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+
+      function toggleTheme() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+      }
+    </script>
+  </body>
 </html>

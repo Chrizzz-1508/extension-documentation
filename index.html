@@ -24,22 +24,21 @@
         margin-bottom: 2rem;
       }
 
-      .input-box {
-        padding: 5px;
-        width: 100%;
-        margin-bottom: 3rem;
-        position: relative;
-      }
+.input-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+  width: 100%;
+}
 
-      #searchInput {
-        width: 300px;
-        padding: 10px;
-        font-size: 16px;
-        position: absolute;
-        right: 7%;
-        border: none;
-        border-radius: 5px;
-      }
+#searchInput {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+}
+
 
       .grid {
         display: grid;
@@ -91,7 +90,29 @@
       .hidden {
         display: none !important;
       }
-	  
+	  html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.grid {
+  flex-grow: 1;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: #ccc;
+}
+
 
     </style>
   </head>
@@ -200,7 +221,13 @@
         <h2 class="tile-text">Chatbox</h2>
       </div>
     </div>
-
+    <footer>
+      <p>
+        Design by <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a> and <a href="https://poetryandlilies.itch.io" target="_blank">PoetryandLilies</a><br>
+        Search function by <a href="https://poetryandlilies.itch.io" target="_blank">PoetryandLilies</a><br>
+        2025
+      </p>
+    </footer>
     <script>
       function filterGrid() {
         const searchInput = document
