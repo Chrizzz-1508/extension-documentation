@@ -1,163 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Voicemod for SAMMI</title>
-        <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/chrizzz-profile_image-300x300.png" />
-        <link rel="stylesheet" href="https://Chrizzz-1508.github.io/extension-documentation/styles.css" />
-    </head>
-    <body>
-        <h1 class="heading">
-            Voicemod for SAMMI
-            <img src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/chrizzz-profile_image-300x300.png" class="img-left" />
-        </h1>
-        <h2 class="sub-heading">Effortlessly transform your voice during livestreams using Voicemod and SAMMI</h2>
-        <p>This SAMMI extension integrates with Voicemod, allowing you to dynamically control and change your voice in real time. It adds an interactive, fun layer to your streams or content creation.</p>
-        <p><strong>Note:</strong> Use version <strong>V3</strong> only if you are using Voicemod V3 or higher. If you're using an older version, please use the <strong>V1.1</strong> extension instead.</p>
-        <h2 class="sub-heading-1">Setup</h2>
-        <p>
-        <ol>
-            <li>Inside SAMMI go to "SAMMI Bridge", select "Install an Extension" and then the "Voicemod.sef" file</li>
-            <a
-                href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/voicemod/install_1.png"
-                target="_blank"
-                title="Click for Large Image"
-                ><img
-                src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/voicemod/install_1.png"
-                alt="Install 1"
-                />
-            </a>
-            <a
-                href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/voicemod/install_2.png"
-                target="_blank"
-                title="Click for Large Image"
-                ><img
-                src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/voicemod/install_2.png"
-                alt="Install 2"
-                />
-            </a>
-        </ol>
-        </p>
-        <h2 class="sub-heading-1">SAMMI Commands</h2>
-        <ol>
-            <p>This extension provides several useful commands to control Voicemod directly from SAMMI. These commands may take some time to execute—use <strong>Wait Until Variable Exists</strong> when needed.</p>
-            <table style="width: 100%; border-collapse: collapse; margin-bottom: 2rem;">
-                <thead style="background-color: #444; color: white;">
-                    <tr>
-                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Command Name</th>
-                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr style="background-color: #2c2c2c;">
-                        <td style="border: 1px solid #ddd; padding: 12px;">VM: Change to Specific Voice</td>
-                        <td style="border: 1px solid #ddd; padding: 12px;">Pick and switch to a voice of your choice.</td>
-                    </tr>
-                    <tr>
-                        <td style="border: 1px solid #ddd; padding: 12px;">VM: Random Voice</td>
-                        <td style="border: 1px solid #ddd; padding: 12px;">Let SAMMI surprise you with a random voice.</td>
-                    </tr>
-                    <tr style="background-color: #2c2c2c;">
-                        <td style="border: 1px solid #ddd; padding: 12px;">VM: Reset Voice</td>
-                        <td style="border: 1px solid #ddd; padding: 12px;">Revert back to your natural voice.</td>
-                    </tr>
-                    <tr>
-                        <td style="border: 1px solid #ddd; padding: 12px;">VM: Toggle Background Effects</td>
-                        <td style="border: 1px solid #ddd; padding: 12px;">Turn on or off any background effects.</td>
-                    </tr>
-                    <tr style="background-color: #2c2c2c;">
-                        <td style="border: 1px solid #ddd; padding: 12px;">VM: Toggle Hear My Voice</td>
-                        <td style="border: 1px solid #ddd; padding: 12px;">Control whether you can hear your own voice transformation.</td>
-                    </tr>
-                    <tr>
-                        <td style="border: 1px solid #ddd; padding: 12px;">VM: Toggle Mute</td>
-                        <td style="border: 1px solid #ddd; padding: 12px;">Mute or unmute your voice.</td>
-                    </tr>
-                    <tr style="background-color: #2c2c2c;">
-                        <td style="border: 1px solid #ddd; padding: 12px;">VM: Toggle Voice Changer</td>
-                        <td style="border: 1px solid #ddd; padding: 12px;">Enable or disable the voice changer feature.</td>
-                    </tr>
-                    <tr>
-                        <td style="border: 1px solid #ddd; padding: 12px;">VM: Get Voice Bitmap</td>
-                        <td style="border: 1px solid #ddd; padding: 12px;">Fetch the image for the selected voice.</td>
-                    </tr>
-                    <tr style="background-color: #2c2c2c;">
-                        <td style="border: 1px solid #ddd; padding: 12px;">VM: Prevent Bad Language</td>
-                        <td style="border: 1px solid #ddd; padding: 12px;">Helps filter inappropriate language using mute/beep for x milliseconds.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </ol>
-        <h2 class="sub-heading-1">SAMMI Triggers</h2>
-        <ol>
-            <p>The following trigger is available to react when a voice change occurs:</p>
-            <table style="width: 100%; border-collapse: collapse; margin-bottom: 2rem;">
-                <thead style="background-color: #444; color: white;">
-                    <tr>
-                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Trigger Name</th>
-                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr style="background-color: #2c2c2c;">
-                        <td style="border: 1px solid #ddd; padding: 12px;">Voicemod: Voice Changed</td>
-                        <td style="border: 1px solid #ddd; padding: 12px;">Triggered whenever the voice is altered in any way.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </ol>
-        <h2 class="sub-heading-1">Bridge Interface</h2>
-        <ol>
-            <p>The bridge provides real-time info about Voicemod's state:</p>
-            <a href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/main/voicemod/bridge.png" target="_blank" title="Click for Large Image">
-            <img src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/main/voicemod/bridge.png" alt="Voicemod Bridge Interface" />
-            </a>
-            <table style="width: 100%; border-collapse: collapse; margin-bottom: 2rem;">
-                <thead style="background-color: #444; color: white;">
-                    <tr>
-                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Feature</th>
-                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr style="background-color: #2c2c2c;">
-                        <td style="border: 1px solid #ddd; padding: 12px;">Status</td>
-                        <td style="border: 1px solid #ddd; padding: 12px;">Indicates whether you’re connected to Voicemod.</td>
-                    </tr>
-                    <tr>
-                        <td style="border: 1px solid #ddd; padding: 12px;">Voicechanger</td>
-                        <td style="border: 1px solid #ddd; padding: 12px;">Shows the current voice setting.</td>
-                    </tr>
-                    <tr style="background-color: #2c2c2c;">
-                        <td style="border: 1px solid #ddd; padding: 12px;">Background Effects</td>
-                        <td style="border: 1px solid #ddd; padding: 12px;">Displays the status of background effects.</td>
-                    </tr>
-                    <tr>
-                        <td style="border: 1px solid #ddd; padding: 12px;">Hear My Voice</td>
-                        <td style="border: 1px solid #ddd; padding: 12px;">Lets you know if you can hear your transformed voice.</td>
-                    </tr>
-                    <tr style="background-color: #2c2c2c;">
-                        <td style="border: 1px solid #ddd; padding: 12px;">Muted</td>
-                        <td style="border: 1px solid #ddd; padding: 12px;">Indicates if your voice is muted.</td>
-                    </tr>
-                    <tr>
-                        <td style="border: 1px solid #ddd; padding: 12px;">License Type</td>
-                        <td style="border: 1px solid #ddd; padding: 12px;">Displays the type of Voicemod license you have.</td>
-                    </tr>
-                    <tr style="background-color: #2c2c2c;">
-                        <td style="border: 1px solid #ddd; padding: 12px;">Voice ID</td>
-                        <td style="border: 1px solid #ddd; padding: 12px;">Shows the identifier for the current voice.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </ol>
-    </body>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voicemod for SAMMI</title>
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/chrizzz-profile_image-300x300.png" />
+    <link rel="stylesheet" href="https://Chrizzz-1508.github.io/extension-documentation/styles.css" />
+  </head>
+  <body>
+    <button class="all-extensions" onclick="location.href='https://chrizzz-1508.github.io/extension-documentation/'">All Extensions</button>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+
+    <h1 class="heading">
+      Voicemod for SAMMI
+      <img src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/chrizzz-profile_image-300x300.png" class="img-left" />
+    </h1>
+
+    <h2 class="sub-heading">Effortlessly transform your voice during livestreams using Voicemod and SAMMI</h2>
+    <p>This SAMMI extension integrates with Voicemod, allowing you to dynamically control and change your voice in real time. It adds an interactive, fun layer to your streams or content creation.</p>
+    <p><strong>Note:</strong> Use version <strong>V3</strong> only if you are using Voicemod V3 or higher. If you're using an older version, please use the <strong>V1.1</strong> extension instead.</p>
+
+    <h2 class="sub-heading-1">Setup</h2>
+    <ol>
+      Inside SAMMI go to "SAMMI Bridge", select "Install an Extension" and then the "Voicemod.sef" file
+      <a href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/voicemod/install_1.png" target="_blank"><img src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/voicemod/install_1.png" alt="Install 1" /></a>
+      <a href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/voicemod/install_2.png" target="_blank"><img src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/voicemod/install_2.png" alt="Install 2" /></a>
+    </ol>
+
+    <h2 class="sub-heading-1">SAMMI Commands</h2>
+    <p>This extension provides several useful commands to control Voicemod directly from SAMMI. These commands may take some time to execute—use <strong>Wait Until Variable Exists</strong> when needed.</p>
+    <table class="settings-table">
+      <thead>
+        <tr><th>Command Name</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>VM: Change to Specific Voice</td><td>Pick and switch to a voice of your choice.</td></tr>
+        <tr><td>VM: Random Voice</td><td>Let SAMMI surprise you with a random voice.</td></tr>
+        <tr><td>VM: Reset Voice</td><td>Revert back to your natural voice.</td></tr>
+        <tr><td>VM: Toggle Background Effects</td><td>Turn on or off any background effects.</td></tr>
+        <tr><td>VM: Toggle Hear My Voice</td><td>Control whether you can hear your own voice transformation.</td></tr>
+        <tr><td>VM: Toggle Mute</td><td>Mute or unmute your voice.</td></tr>
+        <tr><td>VM: Toggle Voice Changer</td><td>Enable or disable the voice changer feature.</td></tr>
+        <tr><td>VM: Get Voice Bitmap</td><td>Fetch the image for the selected voice.</td></tr>
+        <tr><td>VM: Prevent Bad Language</td><td>Helps filter inappropriate language using mute/beep for x milliseconds.</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="sub-heading-1">SAMMI Triggers</h2>
+    <p>The following trigger is available to react when a voice change occurs:</p>
+    <table class="settings-table">
+      <thead>
+        <tr><th>Trigger Name</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Voicemod: Voice Changed</td><td>Triggered whenever the voice is altered in any way.</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="sub-heading-1">Bridge Interface</h2>
+    <p>The bridge provides real-time info about Voicemod's state:</p>
+    <a href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/main/voicemod/bridge.png" target="_blank">
+      <img src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/main/voicemod/bridge.png" alt="Voicemod Bridge Interface" />
+    </a>
+    <table class="settings-table">
+      <thead>
+        <tr><th>Feature</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Status</td><td>Indicates whether you’re connected to Voicemod.</td></tr>
+        <tr><td>Voicechanger</td><td>Shows the current voice setting.</td></tr>
+        <tr><td>Background Effects</td><td>Displays the status of background effects.</td></tr>
+        <tr><td>Hear My Voice</td><td>Lets you know if you can hear your transformed voice.</td></tr>
+        <tr><td>Muted</td><td>Indicates if your voice is muted.</td></tr>
+        <tr><td>License Type</td><td>Displays the type of Voicemod license you have.</td></tr>
+        <tr><td>Voice ID</td><td>Shows the identifier for the current voice.</td></tr>
+      </tbody>
+    </table>
+
     <footer>
-        <p>
-            Extension by <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a><br>
-            Docs created by <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a><br>
-            2025
-        </p>
+      <p>
+        Extension by <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a><br>
+        Docs by <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a><br>
+        Design by <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a><br>
+        2025
+      </p>
     </footer>
+
+    <script>
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+
+      function toggleTheme() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+      }
+    </script>
+  </body>
 </html>
