@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,291 +15,152 @@
     />
   </head>
   <body>
-    <h1 class="heading">
-      Onscreen Timer<img
-        src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/chrizzz-profile_image-300x300.png"
-        class="img-left"
-      /><img
-        src="https://sammi.solutions/assets/images/extensions/onscreen_timer_ss1.png"
-        class="img-right"
-      />
-    </h1>
-    <h2 class="sub-heading">
-      Creates a Timer in OBS that you and your mods can manage with simple chat
-      commands
-    </h2>
+    <button class="all-extensions" onclick="location.href='https://chrizzz-1508.github.io/extension-documentation/'">All Extensions</button>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+
+    <h1 class="heading">Onscreen Timer</h1>
+    <h2 class="sub-heading">Creates a Timer in OBS that you and your mods can manage with simple chat commands</h2>
     <p>
-      This extension creates a Timer in OBS that you can customise and manage
-      with chat commands or SAMMI commands! Check out the features below!
+      This extension creates a Timer in OBS that you can customize and manage with chat commands or SAMMI buttons. Check out the features below!
     </p>
 
     <h2 class="sub-heading-1">Features</h2>
     <ul>
-      <li>Fully customisable OBS Timer</li>
-      <li>
-        Twitch chat commands that you and your mods can use to manage the timer
-      </li>
-      <li>
-        Extension commands so that you can have things like channel points add
-        time
-        <ul>
-          <li>Start</li>
-          <li>Pause</li>
-          <li>Set Time</li>
-          <li>Add/Remove Time</li>
-          <li>Show/Hide Timer</li>
-        </ul>
-      </li>
-      <li>Timer is also updated and displayed inside of the SAMMI Deck</li>
+      <li>Fully customizable OBS Timer</li>
+      <li>Twitch chat commands for you and your mods</li>
+      <li>Extension commands for custom button logic (channel points, etc.)</li>
+      <li>Timer updates live inside the SAMMI Deck</li>
     </ul>
 
     <h2 class="sub-heading-1">Setup</h2>
     <ol>
+      <li>Ensure OBS is open and connected to SAMMI<br><strong style="color: red">This is necessary before you install</strong></li>
+      <li>Install the extension. See the <a href="https://sammi.solutions/extensions/install" target="_blank">SAMMI documentation</a> for how to install extensions.</li>
+      <li>The setup will create the required scene and sources.</li>
       <li>
-        Ensure OBS is open and connected to SAMMI<br />
-        <strong style="color: red">This is necessary before you install</strong>
-      </li>
-      <li>
-        Install the extension. Refer to the SAMMI
-        <a href="https://sammi.solutions/extensions/install" target="_blank"
-          >documentation</a
-        >
-        on how to install an extension.
-      </li>
-      <li>The setup will now run and create the required scene and sources</li>
-      <li>
-        When it has created the sources you will be asked if you want to add the
-        Timer to the current scene that you are on.<br />
-        You can decline with <strong>No</strong> and add it manually later by
-        adding the scene as a source to whichever scene you'd like it displayed
-        on.<br />
-        <a
-          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/onscreen-timer/setup.png"
-          target="_blank"
-          title="Click for Large Image"
-          ><img
-            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/onscreen-timer/setup.png"
-            alt="Setup Dialogue"
-          />
+        You will be prompted to add the timer to your current scene. You can decline and add it manually later.
+        <a href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/onscreen-timer/setup.png" target="_blank">
+          <img src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/onscreen-timer/setup.png" alt="Setup Dialogue" />
         </a>
       </li>
       <li>
-        When the setup has complete, you should see a popup like the below:<br />
-        <a
-          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/onscreen-timer/setup1.png"
-          target="_blank"
-          title="Click for Large Image"
-          ><img
-            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/onscreen-timer/setup1.png"
-            alt="Setup Dialogue"
-          />
+        You should see a confirmation popup once setup completes.
+        <a href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/onscreen-timer/setup1.png" target="_blank">
+          <img src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/onscreen-timer/setup1.png" alt="Setup Complete" />
         </a>
       </li>
       <li>
-        You can enter the <strong>Settings</strong> button in the deck to edit
-        the scene or source name if you ever change it and to change an option
-        for displaying the timer in full. <br />
-        If set to <strong>True</strong>, 50 seconds would display as
-        <strong>00:00:50</strong> <br />
-        <a
-          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/onscreen-timer/settings.png"
-          target="_blank"
-          title="Click for Large Image"
-          ><img
-            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/onscreen-timer/settings.png"
-            alt="Settings"
-          />
+        Use the <strong>Settings</strong> button in the deck to change scene/source names and toggle full timestamp display.
+        <a href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/onscreen-timer/settings.png" target="_blank">
+          <img src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/onscreen-timer/settings.png" alt="Settings" />
         </a>
-        <br />
-        <a
-          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/onscreen-timer/deck.png"
-          target="_blank"
-          title="Click for Large Image"
-          ><img
-            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/onscreen-timer/deck.png"
-            alt="View of the Deck"
-          />
+        <a href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/onscreen-timer/deck.png" target="_blank">
+          <img src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/onscreen-timer/deck.png" alt="Deck View" />
         </a>
       </li>
     </ol>
 
     <h2 class="sub-heading-1">Twitch Commands</h2>
-    <ul>
-      <li>
-        There are various Twitch commands that by default are restricted to you,
-        the broadcaster, and your mods.
-      </li>
-      <li>
-        Accepted Time Formats: use colons between the digits.<br />
-        E.g. <strong>01:05:30</strong> (1 Hour, 5 minutes, 30 seconds),
-        <strong>5:30</strong> (5 minutes, 30 seconds), <strong>30</strong> (30
-        seconds), <strong>900</strong> (900 seconds or 15 minutes)
-      </li>
-      <li>
-        <strong>!timer start *</strong> - Starts the timer with a specific
-        amount of time. For accepted formats, see above.
-      </li>
-      <li><strong>!timer pause</strong> - Pauses the timer</li>
-      <li>
-        <strong>!timer start <strong>OR</strong> unpause</strong> - Unpauses the
-        timer
-      </li>
-      <li>
-        <strong>!timer settime *</strong> - sets the time to a specific time.
-        For accepted formats, see above.
-      </li>
-      <li>
-        <strong>!timer add *</strong> - Adds a specific amount of time to the
-        timer. For accepted formats, see above.
-      </li>
-      <li>
-        <strong>!timer remove *</strong> - Removes a specific amount of time
-        from the timer. For accepted formats, see above.
-      </li>
-      <li><strong>!timer show</strong> - Displays the timer in OBS</li>
-      <li><strong>!timer hide</strong> - Hides the timer in OBS</li>
-    </ul>
+    <p>All commands are restricted to the broadcaster and moderators by default.</p>
+    <p><strong>Accepted time formats:</strong> <code>01:05:30</code>, <code>5:30</code>, <code>30</code>, <code>900</code></p>
+    <table class="settings-table">
+      <thead>
+        <tr><th>Command</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>!timer start *</td><td>Starts timer with specific time</td></tr>
+        <tr><td>!timer pause</td><td>Pauses the timer</td></tr>
+        <tr><td>!timer start OR unpause</td><td>Resumes the timer</td></tr>
+        <tr><td>!timer settime *</td><td>Sets the timer to a specific value</td></tr>
+        <tr><td>!timer add *</td><td>Adds time</td></tr>
+        <tr><td>!timer remove *</td><td>Removes time</td></tr>
+        <tr><td>!timer show</td><td>Shows timer in OBS</td></tr>
+        <tr><td>!timer hide</td><td>Hides timer in OBS</td></tr>
+      </tbody>
+    </table>
 
     <h2 class="sub-heading-1">Extension Commands</h2>
-    <ul>
-      <li>
-        There are various extension commands that you can use within SAMMI to
-        manage the timer. You can add these to buttons you have for channel
-        point triggers, chat triggers, bit/sub/follow triggers etc.
-      </li>
-      <li>
-        There is a button in the deck named
-        <strong>Extension Commands Examples</strong> that you can check out to
-        see examples of all the commands below
-      </li>
-      <li>
-        Accepted Time Formats: use colons between the digits.<br />
-        E.g. <strong>01:05:30</strong> (1 Hour, 5 minutes, 30 seconds),
-        <strong>5:30</strong> (5 minutes, 30 seconds), <strong>30</strong> (30
-        seconds), <strong>900</strong> (900 seconds or 15 minutes)
-      </li>
-      <li>
-        <strong>Timer: Set Timer</strong> - Sets the time
-        <ul>
-          <li>
-            <strong>Time</strong> - This box is where you enter the time in an
-            accepted format. For accepted formats, see above.
-          </li>
-          <li>
-            <strong>Start Timer</strong> - Dropdown box where you can select
-            <ul>
-              <li>
-                <strong>Yes</strong> to Set the time, display the timer and then
-                start the timer
-              </li>
-              <li><strong>No</strong> to set the time and pause the timer</li>
-              <li><strong>Don't Change</strong> to set the time</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <strong>Timer: Add/Remove Time</strong> - Adds or removes time from the
-        timer
-        <ul>
-          <li>
-            <strong>Option</strong> - Dropdown box where you can select
-            <ul>
-              <li><strong>Add Time</strong> to add time</li>
-              <li><strong>Remove Time</strong> to remove time</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Time</strong> - This box is where you enter the time. For
-            accepted formats, see above.
-          </li>
-        </ul>
-      </li>
-      <li>
-        <strong>Timer: Show/Hide</strong> - Shows or hides the timer in OBS
-        <ul>
-          <li>
-            <strong>Option</strong> - Dropdown box where you can select
-            <ul>
-              <li><strong>Show</strong> to show the timer in OBS</li>
-              <li><strong>Hide</strong> to hide the timer in OBS</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <strong>Timer: Start/Pause</strong> - Starts or stops the current timer
-        <ul>
-          <li>
-            <strong>Option</strong> - Dropdown box where you can select
-            <ul>
-              <li><strong>Start</strong> to start the current timer</li>
-              <li><strong>Pause</strong> to pause the current timer</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <br />
-      <a
-        href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/onscreen-timer/extensioncmds.png"
-        target="_blank"
-        title="Click for Large Image"
-        ><img
-          src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/onscreen-timer/extensioncmds.png"
-          alt="Extension Commands"
-        />
-      </a>
-    </ul>
+    <p>These can be used inside SAMMI buttons, e.g., for channel points or event triggers.</p>
 
-    <h2 class="sub-heading-1">Customisation</h2>
+    <h3>Timer: Set Timer</h3>
+    <table class="settings-table">
+      <thead><tr><th>Field</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>Time</td><td>Time value in any accepted format</td></tr>
+        <tr><td>Start Timer</td><td>
+		<strong>Yes</strong>: Set + show + start timer<br>
+		<strong>No</strong>: Set + pause<br>
+		<strong>Don't Change</strong>: Just set
+        </td></tr>
+      </tbody>
+    </table>
+
+    <h3>Timer: Add/Remove Time</h3>
+    <table class="settings-table">
+      <thead><tr><th>Field</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>Option</td><td><strong>Add Time</strong> or <strong>Remove Time</strong></td></tr>
+        <tr><td>Time</td><td>Amount of time to add or remove</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Timer: Show/Hide</h3>
+    <table class="settings-table">
+      <thead><tr><th>Field</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>Option</td><td><strong>Show</strong> or <strong>Hide</strong> the timer in OBS</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Timer: Start/Pause</h3>
+    <table class="settings-table">
+      <thead><tr><th>Field</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>Option</td><td><strong>Start</strong> or <strong>Pause</strong> the timer</td></tr>
+      </tbody>
+    </table>
+
+    <a href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/onscreen-timer/extensioncmds.png" target="_blank">
+      <img src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/onscreen-timer/extensioncmds.png" alt="Extension Commands" />
+    </a>
+
+    <h2 class="sub-heading-1">Customization</h2>
     <ul>
+	  <li>You can edit the <strong>TIMER_FINISHED</strong> button (label: "Timer is over Add your own Stuff here") to define behavior when timer hits 0.</li>
+	  <li>Edit or disable default chat message</li>
+	  <li>Choose whether to leave timer visible at 0</li>
       <li>
-        There is a button that handles what happens when the timer finishes. The
-        ID is <strong>TIMER_FINISHED</strong> and in the deck it is called
-        <strong>Timer is over Add your own Stuff here</strong>
-        <ul>
-          <li>
-            You can add whatever you want to happen after the timer hits 0 in
-            here.
-          </li>
-          <li>
-            You can edit the default chat message that is sent when the timer
-            finishes or turn it off
-          </li>
-          <li>
-            You can even choose to continue displaying the timer at 0 seconds
-          </li>
-        </ul>
-      </li>
-      <li>
-        You can customise the font and colour of the timer in OBS. Simply visit
-        the scene that was created - <strong>Timer Scene</strong> by default -
-        and then right click the source - <strong>Timer Source</strong> by
-        default - select properties and change anything you'd like<br />
-        <br />
-        <strong style="color: red">Note:</strong> By default the source opacity
-        filter is at 0% so you will have to show the timer first to see it.<br />
-        <a
-          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/onscreen-timer/timer.png"
-          target="_blank"
-          title="Click for Large Image"
-          ><img
-            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/onscreen-timer/timer.png"
-            alt="OBS Timer Settings"
-          />
+        Customize the timer font and color in OBS by editing the <strong>Timer Scene</strong> and <strong>Timer Source</strong>.
+        <strong style="color: red">Note:</strong> Opacity is 0% by default — you must show the timer first.
+        <a href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/onscreen-timer/timer.png" target="_blank">
+          <img src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/onscreen-timer/timer.png" alt="OBS Timer Settings" />
         </a>
       </li>
     </ul>
+
+    <footer>
+      <p>
+        Extension by <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a><br>
+        Docs created by <a href="https://poetryandlilies.itch.io" target="_blank">PoetryandLilies</a><br>
+        Design by <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a><br>
+        2025
+      </p>
+    </footer>
+
+    <script>
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+
+      function toggleTheme() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+      }
+    </script>
   </body>
-  <footer>
-    <p>
-      Extension by
-      <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a><br />
-      Docs created by
-      <a href="https://poetryandlilies.itch.io" target="_blank"
-        >PoetryandLilies</a
-      ><br />
-      2025
-    </p>
-  </footer>
 </html>
