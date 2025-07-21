@@ -1,505 +1,493 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Slot Machine</title>
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/chrizzz-profile_image-300x300.png"
-    />
-    <link
-      rel="stylesheet"
-      href="https://Chrizzz-1508.github.io/extension-documentation/styles.css"
-    />
-  </head>
-  <body>
-    <h1 class="heading">
-      Slot Machine<img
-        src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/chrizzz-profile_image-300x300.png"
-        class="img-left"
-      /><img
-        src="https://sammi.solutions/assets/images/extensions/slots.png"
-        class="img-right"
-      />
-    </h1>
-    <h2 class="sub-heading">
-      Create your own customisable slot machine in SAMMI for OBS
-    </h2>
-    <p>
-      Creates a fully customisable slot machine that can be played by your
-      twitch chat and displayed in OBS! Check out the features below!
-    </p>
-
-    <h2 class="sub-heading-1">Features</h2>
-    <ul>
-      <li>Slot Images are fully customisable</li>
-      <li>Rewards/Prizes are also fully customisable</li>
-      <li>Ability to spin all 3 slots or specific slots</li>
-      <li>Ability to add rewards to the prize pool dynamically</li>
-      <li>Ability to change the slot image configuration on the fly</li>
-      <li>Comes fully setup with a bank of images and default settings</li>
-    </ul>
-
-    <h2 class="sub-heading-1">Setup</h2>
-    <ol>
-      <li>
-        Copy the entire <strong>Slots</strong> folder into your SAMMI install
-        location
-      </li>
-      <li>
-        Install the extension. Refer to the SAMMI
-        <a href="https://sammi.solutions/extensions/install" target="_blank"
-          >documentation</a
-        >
-        on how to install an extension.
-      </li>
-      <li>Ensure OBS is open and connected to SAMMI</li>
-      <li>
-        The extension will now run the setup and create the required scenes and
-        sources
-      </li>
-      <li>
-        When it has created the sources you will be asked if you want to add the
-        Timer to the current scene that you are on.<br />
-        You can decline with <strong>No</strong> and add it manually later by
-        adding the scene as a source to whichever scene you'd like it displayed
-        on.<br />
-        <a
-          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/setup.png"
-          target="_blank"
-          title="Click for Large Image"
-          ><img
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Slot Machine</title>
+      <link
+         rel="icon"
+         type="image/x-icon"
+         href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/chrizzz-profile_image-300x300.png"
+         />
+      <link
+         rel="stylesheet"
+         href="https://Chrizzz-1508.github.io/extension-documentation/styles.css"
+         />
+   </head>
+   <body>
+      <button class="all-extensions" onclick="location.href='https://chrizzz-1508.github.io/extension-documentation/'">All Extensions</button>
+      <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+      <h1 class="heading">
+         Slot Machine
+      </h1>
+      <p>
+         Creates a fully customizable slot machine that can be played by your
+         twitch chat and displayed in OBS
+      </p>
+      <h2 class="sub-heading-1">Features</h2>
+      <ul>
+         <li>Slot Images are fully customizable</li>
+         <li>Rewards/Prizes are also fully customizable</li>
+         <li>Ability to spin all 3 slots or specific slots</li>
+         <li>Ability to add rewards to the prize pool dynamically</li>
+         <li>Ability to change the slot image configuration on the fly</li>
+         <li>Comes fully setup with a bank of images and default settings</li>
+      </ul>
+      <h2 class="sub-heading-1">Setup</h2>
+      <ol>
+         <li>
+            Copy the entire <strong>Slots</strong> folder into your SAMMI install
+            location
+         </li>
+         <li>
+            Install the extension. Refer to the SAMMI <a href="https://sammi.solutions/extensions/install" target="_blank">documentation</a>on how to install an extension.
+         </li>
+         <li>Ensure OBS is open and connected to SAMMI</li>
+         <li>
+            The extension will now run the setup and create the required scenes and
+            sources
+         </li>
+         <a
+            href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/setup.png"
+            target="_blank"
+            title="Click for Large Image"
+            ><img
             src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/setup.png"
             alt="Setup Dialogue"
-          />
-        </a>
-      </li>
-      <li>
-        When the setup has complete, you should see a popup like the below:<br />
-        <a
-          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/setup1.png"
-          target="_blank"
-          title="Click for Large Image"
-          ><img
-            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/setup1.png"
-            alt="Setup Dialogue"
-          />
-        </a>
-      </li>
-      <li>
-        Enter the <strong>Settings</strong> button in the deck and customise any
-        settings
-        <ul>
-          <li>
-            <strong>broadcaster_name</strong> - This is your twitch name. Only
-            change this if you use a bot account and want to have it send the
-            chat messages as the bot
-          </li>
-          <li>
-            <strong>symbols_only_from_left</strong> - Wins only count from left
-            to right, so Diamond Cherry Cherry wouldn't win
-          </li>
-          <li>
-            <strong>min_rest_spins</strong> - Minimum amount of spins until the
-            slot will completely stop
-          </li>
-          <li>
-            <strong>max_rest_spins</strong> - Maximum amount of spins until the
-            slot will completely stop
-          </li>
-        </ul>
-        <br />
-        <a
-          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/settings.png"
-          target="_blank"
-          title="Click for Large Image"
-          ><img
-            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/settings.png"
-            alt="Settings"
-          />
-        </a>
-      </li>
-      <li>
-        Customise any rewards - the rewards listed here are all setup for the
-        default bank of images and symbols
-        <ul>
-          <li>
-            <strong>Prize Name</strong> - The name of the prize the user will
-            win
-          </li>
-          <li>
-            <strong>Symbol Name</strong> - The name of the symbol (By default:
-            Cherry, Diamond, Orange, Grapes, Melon)
-          </li>
-          <li>
-            <strong>Amount of Symbols</strong> - Amount of matching Symbols
-            needed to win this prize
-          </li>
-          <li>
-            <strong>Extension Trigger</strong> - This is optional. Can be left
-            empty, if it is set, it will automatically trigger an extension
-            trigger with this name when someone gets this
-          </li>
-        </ul>
-        <br />
-        <a
-          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/settings1.png"
-          target="_blank"
-          title="Click for Large Image"
-          ><img
-            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/settings1.png"
-            alt="Settings"
-          />
-        </a>
-      </li>
-      <li>
-        There are predefined <strong>Prize</strong> buttons with all of the
-        Prize triggers already set, on the right hand side of the deck. You can
-        add anything in the respective buttons if you want something to happen
-        for each win
-      </li>
-      <li>
-        By default all of the slot chat message commands are turned off in the
-        respective <strong>Prize</strong> buttons in the deck. If you want to
-        turn on any messages for different prizes, you can do so in each button
-      </li>
-      <li>
-        After you change any settings or rewards, restart SAMMI<br />
-        <a
-          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/deck.png"
-          target="_blank"
-          title="Click for Large Image"
-          ><img
-            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/deck.png"
-            alt="View of the Deck"
-          />
-        </a>
-        <br />
-        <video muted autoplay name="media" loop>
-          <source
+            />
+         </a>
+         </li>
+         <li>
+            When the setup has complete, you should see a popup like the below:<br>
+            <a
+               href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/setup1.png"
+               target="_blank"
+               title="Click for Large Image"
+               ><img
+               src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/setup1.png"
+               alt="Setup Dialogue"
+               />
+            </a>
+         </li>
+      </ol>
+      <h2 class="sub-heading-1">Settings</h2>
+      You can enter the <strong>Settings</strong> button in the deck and customize any settings.<br>
+      If you change any settings, please restart SAMMI afterwards for the new settings to be applied.
+      <table class="settings-table">
+         <thead>
+            <tr>
+               <th>Setting</th>
+               <th>Description</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>broadcaster_name</td>
+               <td>Your Twitch name, only change this if you are using a bot account</td>
+            </tr>
+            <tr>
+               <td>symbols_only_from_left</td>
+               <td>Enable left-to-right-only wins</td>
+            </tr>
+            <tr>
+               <td>min_rest_spins</td>
+               <td>Minimum spins before slot fully stops</td>
+            </tr>
+            <tr>
+               <td>max_rest_spins</td>
+               <td>Maximum spins before slot fully stops</td>
+            </tr>
+         </tbody>
+      </table>
+      <a
+         href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/settings.png"
+         target="_blank"
+         title="Click for Large Image"
+         ><img
+         src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/settings.png"
+         alt="Settings"
+         />
+      </a>
+      <h2 class="sub-heading-1">Customizing rewards</h2>
+      You can customize any rewards - the rewards listed here are all setup for the default images and symbols
+      <table class="settings-table">
+         <thead>
+            <tr>
+               <th>Value</th>
+               <th>Description</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>Prize Name</td>
+               <td>The name of the prize the user will win</td>
+            </tr>
+            <tr>
+               <td>Symbol Name</td>
+               <td>The name of the symbol (By default: Cherry, Diamond, Orange, Grapes, Melon)</td>
+            </tr>
+            <tr>
+               <td>Amount of Symbols</td>
+               <td>Amount of matching Symbols needed to win this prize</td>
+            </tr>
+            <tr>
+               <td>Extension Trigger</td>
+               <td>This is optional and can be left empty<br>This will automatically trigger an extension trigger with this name when someone gets this</td>
+            </tr>
+         </tbody>
+      </table>
+      <a
+         href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/settings1.png"
+         target="_blank"
+         title="Click for Large Image"
+         ><img
+         src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/settings1.png"
+         alt="Settings"
+         />
+      </a>
+      <ul>
+         <li>
+            There are predefined <strong>Prize</strong> buttons with all of the
+            Prize triggers already set, on the right hand side of the deck.<br>You can
+            add anything in the respective buttons if you want something to happen
+            for each win
+         </li>
+         <li>
+            By default all of the slot chat message commands are turned off in the
+            respective <strong>Prize</strong> buttons in the deck.<br>If you want to
+            turn on any messages for different prizes, you can do so in each button
+         </li>
+         <li>
+            After you change any settings or rewards, restart SAMMI
+      </ul>
+      <a
+         href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/deck.png"
+         target="_blank"
+         title="Click for Large Image"
+         ><img
+         src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/deck.png"
+         alt="View of the Deck"
+         />
+      </a>
+      <br>
+      <video muted autoplay name="media" loop>
+         <source
             src="https://sammi.solutions/assets/videos/extensions/slots.mp4"
             type="video/mp4"
-          />
-        </video>
+            />
+      </video>
       </li>
-    </ol>
-
-    <h2 class="sub-heading-1">Using the Extension</h2>
-    <ul>
-      <li>
-        After you have setup the extension to your liking, you can use it 'out
-        of the box' by adding any triggers to the
-        <strong>Spin the Slot Machine</strong> button. By default
-        <strong>!spin</strong> is enabled for the broadcaster only
-      </li>
-      <li>
-        If you want a more custom setup you can edit the images and symbols used
-        by adding the images to the <strong>images</strong> folder within the
-        <strong>Slots</strong> folder that you copied into your SAMMI install
-        location<br />
-        <br />
-        The images <strong style="color: red">MUST</strong> be in the format
-        <strong>&lt;number&gt;_&lt;name&gt;.png</strong><br />
-        <br />
-        If any numbers are missing they will be skipped<br />
-        <br />
-        You are free to add multiple of the same images. The more of them there
-        are, the higher the chance of landing on that image increases.<br />
-        <br />
-        The rotation of the slot wheel is always in the same order that you
-        number the images in the folder.<br />
-        <br />
-        For example, the image would start at some random position, let's say
-        Diamond and then swap to the next image.<br />
-        <br />
-        If your list looked like 1_Cherry, 2_Diamond, 3_Orange, 4_Cherry,
-        5_Grapes, 6_Cherry, 7_Melon, 8_Orange<br />
-        <br />
-        The rotation would go Diamond > Orange > Cherry > Grapes > Cherry >
-        Melon > Orange > Cherry > Diamond<br />
-        <a
-          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/slots.png"
-          target="_blank"
-          title="Click for Large Image"
-          ><img
-            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/slots.png"
-            alt="Slots Images"
-          />
-        </a>
-        <br />
-        After you've added any images you want, you can edit the symbol names
-        (this is the <strong>&lt;name&gt;</strong> you entered above) and
-        <strong>Prize Names</strong> associated with them in the
-        <strong>Settings</strong> button then restart SAMMI
-      </li>
-      <li>
-        You can then create your own buttons to manage the prizes, if you set an
-        extension trigger for them in the <strong>Settings</strong> button<br />
-        You can use the existing <strong>Prize</strong> buttons on the right
-        side of the deck as an example
-        <ul>
-          <li>
-            Set an
+      <h2 class="sub-heading-1">Using the Extension</h2>
+      <ul>
+         <li>
+            After you have setup the extension to your liking, you can use it "out of the box" by adding any triggers to the <strong>Spin the Slot Machine</strong> button.<br>
+            By default <strong>!spin</strong> is enabled for the broadcaster only.
+         </li>
+         <li>
+            If you want a more custom setup you can edit the images and symbols used by adding the images to the <strong>images</strong> folder within the <strong>Slots</strong> folder that you copied into your SAMMI install location<br><br>
+            The images <strong style="color: red">MUST</strong> be in the format <strong>&lt;number&gt;_&lt;name&gt;.png</strong><br>
+            If any numbers are missing they will be skipped<br>
+            <br>
+            You are free to add multiple of the same images. The more of them there
+            are, the higher the chance of landing on that image increases.<br>
+            <br>
+            The rotation of the slot wheel is always in the same order that you
+            number the images in the folder.<br>
+            For example, the image would start at some random position, let's say
+            Diamond and then swap to the next image.<br>
+            <br>
+            If your list looked like 1_Cherry, 2_Diamond, 3_Orange, 4_Cherry,
+            5_Grapes, 6_Cherry, 7_Melon, 8_Orange<br>
+            The rotation would go Diamond > Orange > Cherry > Grapes > Cherry >
+            Melon > Orange > Cherry > Diamond<br>
             <a
-              href="https://sammi.solutions/docs/commands/trigger-extension"
-              target="_blank"
-              title="Extension Trigger"
-              >extension trigger</a
-            ><br />
-            <a
-              href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/trigger.png"
-              target="_blank"
-              title="Click for Large Image"
-              ><img
-                src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/trigger.png"
-                alt="Extension Trigger"
-              />
+               href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/slots.png"
+               target="_blank"
+               title="Click for Large Image"
+               ><img
+               src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/slots.png"
+               alt="Slots Images"
+               />
             </a>
-          </li>
-          <li>
-            <strong>Example Payload:</strong>
-            <pre>
-                <code>
-{
-"symbol_1": "Grapes",
+            After you've added any images you want, you can edit the symbol names
+            (this is the <strong>&lt;name&gt;</strong> you entered above) and
+            <strong>Prize Names</strong> associated with them in the
+            <strong>Settings</strong> button then restart SAMMI
+         </li>
+         You can then create your own buttons to manage the prizes, if you set an
+         extension trigger for them in the <strong>Settings</strong> button<br>
+         You can use the existing <strong>Prize</strong> buttons on the right
+         side of the deck as an example.
+         <a
+            href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/trigger.png"
+            target="_blank"
+            title="Click for Large Image"
+            ><img
+            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/trigger.png"
+            alt="Extension Trigger"
+            />
+         </a>
+         </li>
+         <li>
+            You can add an
+            <a
+               href="https://sammi.solutions/docs/commands/trigger-extension"
+               target="_blank"
+               title="Trigger Extension Trigger"
+               >extension trigger</a
+               >
+            command with the name <strong>SLOTS MESSAGE *</strong> which will
+            automatically wait 7 seconds and then send your specified chat message
+            (so as not to spoil the result from any delay)<br>
+            <a
+               href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/extensiontrigger.png"
+               target="_blank"
+               title="Click for Large Image"
+               ><img
+               src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/extensiontrigger.png"
+               alt="Extension Trigger"
+               />
+            </a>
+         </li>
+         <li>
+            If you want to test any rewards you have setup, there is a
+            <strong>Slots Test Button</strong> that lets you set any combination of
+            slot symbols for testing that the right prize is rewarded and that your
+            extension triggers work
+         </li>
+      </ul>
+      <h2 class="sub-heading-1">Example Payload</h2>
+      <p>
+         You can use a
+         <a
+            href="https://sammi.solutions/docs/commands/trigger-pull"
+            target="_blank"
+            title="Trigger Pull Data"
+            >Trigger Pull Data</a
+            >
+         command with the value <strong>All</strong> to get the payload object from the
+         trigger<br>
+      <pre>
+                <code>{ "symbol_1": "Grapes",
 "symbol_2": "Diamond",
 "symbol_3": "Cherry",
 "user_name": "TestUser",
 "same_amount": 1,
 "matching_symbol": "None",
-"prize": "1 Grape"
-}
-                </code>
+"prize": "1 Grape" }</code>
             </pre>
-          </li>
-          <li>
-            You can then use
-            <a
-              href="https://sammi.solutions/docs/commands/trigger-pull"
-              target="_blank"
-              title="Trigger Pull Data"
-              >Trigger Pull Data</a
-            >
-            and pull <strong>All</strong> to get the payload object from the
-            trigger<br />
-            <br />
-            <ul>
-              <li><strong>symbol_1</strong> - Symbol name for Slot 1</li>
-              <li><strong>symbol_2</strong> - Symbol name for Slot 2</li>
-              <li><strong>symbol_3</strong> - Symbol name for Slot 3</li>
-              <li>
-                <strong>username</strong> - Username of the user who won the
-                prize
-              </li>
-              <li><strong>same_amount</strong> - Amount of matching symbols</li>
-              <li>
-                <strong>matching_symbol</strong> - Symbol name of the matching
-                symbol
-              </li>
-              <li>
-                <strong>prize</strong> - Prize name entered in the Add Reward
-                command
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li>
-        You can add an
-        <a
-          href="https://sammi.solutions/docs/commands/trigger-extension"
-          target="_blank"
-          title="Trigger Extension Trigger"
-          >extension trigger</a
-        >
-        command with the name <strong>SLOTS MESSAGE *</strong> which will
-        automatically wait 7 seconds and then send your specified chat message
-        (so as not to spoil the result from any delay)<br />
-        <a
-          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/extensiontrigger.png"
-          target="_blank"
-          title="Click for Large Image"
-          ><img
-            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/extensiontrigger.png"
-            alt="Extension Trigger"
-          />
-        </a>
-      </li>
-      <li>
-        If you want to test any rewards you have setup, there is a
-        <strong>Slots Test Button</strong> that lets you set any combination of
-        slot symbols for testing that the right prize is rewarded and that your
-        extension triggers work
-      </li>
-    </ul>
-
-    <h2 class="sub-heading-1">Extension Commands</h2>
-    <ul>
-      <li>
-        The following are extension commands that you can use to further
-        customise how you use the extension. All the below commands have
-        examples in the <strong>Extension Commands Examples</strong> button in
-        the deck
-      </li>
-      <li>
-        <strong>Slots: Play</strong> - Sets a user to pass to the Slot machine
-        and starts playing with the default settings (3 slots and stop them with
-        1s delay in between)
-        <ul>
-          <li>
-            <strong>User Name</strong> - The user name to pass to the slot
-            machine
-          </li>
-          <li>
-            A
-            <a
-              href="https://sammi.solutions/docs/commands/wait-until-exists"
-              target="_blank"
-              title="Wait Until Variable Exists"
-              >wait until variable exists</a
-            >
-            command is needed when using this command. You must wait for
-            <strong>"SLOTS.is_finished"</strong> to be <strong>true</strong
-            ><br />
-            <a
-              href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/wait.png"
-              target="_blank"
-              title="Click for Large Image"
-              ><img
-                src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/wait.png"
-                alt="Wait Until Variable Exists"
-              />
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <strong>Slots: Spin</strong> - Spins a specified slot or all slots
-        <ul>
-          <li>
-            <strong>Select Slot</strong> - Dropdown menu to select
-            <ul>
-              <li><strong>All</strong> - Spins all 3 slots</li>
-              <li><strong>Slot 1</strong> - Spins slot 1</li>
-              <li><strong>Slot 2</strong> - Spins slot 2</li>
-              <li><strong>Slot 3</strong> - Spins slot 3</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <strong>Slots: Stop</strong> - Stops the selected slot
-        <ul>
-          <li>
-            <strong>Select Slot</strong> - Dropdown menu to select
-            <ul>
-              <li><strong>All</strong> - Stops all 3 slots</li>
-              <li><strong>Slot 1</strong> - Stops slot 1</li>
-              <li><strong>Slot 2</strong> - Stops slot 2</li>
-              <li><strong>Slot 3</strong> - Stops slot 3</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Force Stop</strong> - Dropdown menu to select
-            <ul>
-              <li><strong>Yes</strong> - Immediately stops the slot</li>
-              <li>
-                <strong>No</strong> - Gradually stops the slot after 15-20
-                symbol changes
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <strong>Slots: Set Slot</strong> - Set the slot to any symbol of your
-        choice (must be in the images directory and loaded)
-        <ul>
-          <li>
-            <strong>Select Slot</strong> - Dropdown menu to select
-            <ul>
-              <li><strong>All</strong> - Selects all 3 slots</li>
-              <li><strong>Slot 1</strong> - Selects slot 1</li>
-              <li><strong>Slot 2</strong> - Selects slot 2</li>
-              <li><strong>Slot 3</strong> - Selects slot 3</li>
-            </ul>
-          </li>
-          <li><strong>Value</strong> - The name of the Symbol</li>
-        </ul>
-      </li>
-      <li>
-        <strong>Slots: Show/Hide</strong> - Fades the slots in and out
-        <ul>
-          <li>
-            <strong>Option</strong> - Show or Hide the Slots
-            <ul>
-              <li><strong>Show</strong> - Fades the slot in</li>
-              <li><strong>Hide</strong> - Fades the slot out</li>
-            </ul>
-          </li>
-          <li>
-            <strong>User Name</strong> - This is optional. A username you can
-            pass to be displayed on the slot machine interface. If left empty no
-            username is sent.
-          </li>
-        </ul>
-      </li>
-      <li>
-        <strong>Slots: Add Reward</strong> - Adds a reward to the prize pool
-        <ul>
-          <li>
-            <strong>Prize Name</strong> - The name of the prize the user will
-            win
-          </li>
-          <li><strong>Symbol Name</strong> - The name of the symbol</li>
-          <li>
-            <strong>Amount of Symbols</strong> - Amount of matching Symbols
-            needed to win this prize
-          </li>
-          <li>
-            <strong>Extension Trigger</strong> - This is optional. Can be left
-            empty, if it is set, it will automatically trigger an extension
-            trigger with this name when someone gets this
-          </li>
-        </ul>
-      </li>
-      <li>
-        <strong>Slots: Change Image Array</strong> - Changes the images for the
-        slots. Can be left empty to reset to the default slots
-        <ul>
-          <li>
-            <strong>Image Names</strong> - This is a list of images names split
-            by a semi colon (;)
-          </li>
-          <li style="overflow-wrap: anywhere">
-            <strong>Example list:</strong>
-            "2_Diamond.png;7_Melon.png;2_Diamond.png;7_Melon.png;8_Orange.png"
-          </li>
-        </ul>
-      </li>
-      <br />
+      <table class="settings-table">
+         <thead>
+            <tr>
+               <th>Field</th>
+               <th>Description</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>symbol_1</td>
+               <td>Symbol name for Slot 1</td>
+            </tr>
+            <tr>
+               <td>symbol_2</td>
+               <td>Symbol name for Slot 2</td>
+            </tr>
+            <tr>
+               <td>symbol_3</td>
+               <td>Symbol name for Slot 3</td>
+            </tr>
+            <tr>
+               <td>user_name</td>
+               <td>Username of the user who won the prize</td>
+            </tr>
+            <tr>
+               <td>same_amount</td>
+               <td>Amount of matching symbols</td>
+            </tr>
+            <tr>
+               <td>matching_symbol</td>
+               <td>Symbol name of the matching symbol</td>
+            </tr>
+            <tr>
+               <td>prize</td>
+               <td>Prize name entered in the Add Reward command</td>
+            </tr>
+         </tbody>
+      </table>
+      </p>
+      <h2 class="sub-heading-1">Extension Commands</h2>
       <a
-        href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/examples.png"
-        target="_blank"
-        title="Click for Large Image"
-        ><img
-          src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/examples.png"
-          alt="Example Commands"
-        />
+         href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/examples.png"
+         target="_blank"
+         title="Click for Large Image"
+         ><img
+         src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/slot-machine/examples.png"
+         alt="Example Commands"
+         />
       </a>
-    </ul>
-  </body>
-  <footer>
-    <p>
-      Extension by
-      <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a><br />
-      Docs created by
-      <a href="https://poetryandlilies.itch.io" target="_blank"
-        >PoetryandLilies</a
-      ><br />
-      2025
-    </p>
-  </footer>
+      <h3>Slots: Play</h3>
+      <table class="settings-table">
+         <thead>
+            <tr>
+               <th>Field</th>
+               <th>Description</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>User Name</td>
+               <td>The user name to pass to the slot machine</td>
+            </tr>
+            <tr>
+               <td>Wait Until Variable Exists</td>
+               <td>You must wait for "SLOTS.is_finished" to be true</td>
+            </tr>
+         </tbody>
+      </table>
+      <h3>Slots: Spin</h3>
+      <table class="settings-table">
+         <thead>
+            <tr>
+               <th>Field</th>
+               <th>Description</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>Select Slot</td>
+               <td>Dropdown menu to select: All, Slot 1, Slot 2, Slot 3</td>
+            </tr>
+         </tbody>
+      </table>
+      <h3>Slots: Stop</h3>
+      <table class="settings-table">
+         <thead>
+            <tr>
+               <th>Field</th>
+               <th>Description</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>Select Slot</td>
+               <td>Dropdown menu to select: All, Slot 1, Slot 2, Slot 3</td>
+            </tr>
+            <tr>
+               <td>Force Stop</td>
+               <td>Yes = Immediately stops the slot; No = Gradually stops after 15–20 symbol changes</td>
+            </tr>
+         </tbody>
+      </table>
+      <h3>Slots: Set Slot</h3>
+      <table class="settings-table">
+         <thead>
+            <tr>
+               <th>Field</th>
+               <th>Description</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>Select Slot</td>
+               <td>Dropdown menu to select: All, Slot 1, Slot 2, Slot 3</td>
+            </tr>
+            <tr>
+               <td>Value</td>
+               <td>The name of the Symbol</td>
+            </tr>
+         </tbody>
+      </table>
+      <h3>Slots: Show/Hide</h3>
+      <table class="settings-table">
+         <thead>
+            <tr>
+               <th>Field</th>
+               <th>Description</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>Option</td>
+               <td>Show or Hide the Slots</td>
+            </tr>
+            <tr>
+               <td>User Name</td>
+               <td>Optional – a username to display; if left empty, none is sent</td>
+            </tr>
+         </tbody>
+      </table>
+      <h3>Slots: Add Reward</h3>
+      <table class="settings-table">
+         <thead>
+            <tr>
+               <th>Field</th>
+               <th>Description</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>Prize Name</td>
+               <td>The name of the prize the user will win</td>
+            </tr>
+            <tr>
+               <td>Symbol Name</td>
+               <td>The name of the symbol</td>
+            </tr>
+            <tr>
+               <td>Amount of Symbols</td>
+               <td>Amount of matching Symbols needed to win this prize</td>
+            </tr>
+            <tr>
+               <td>Extension Trigger</td>
+               <td>Optional – will trigger an extension trigger with this name if set</td>
+            </tr>
+         </tbody>
+      </table>
+      <h3>Slots: Change Image Array</h3>
+      <table class="settings-table">
+         <thead>
+            <tr>
+               <th>Field</th>
+               <th>Description</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>Image Names</td>
+               <td>A list of image names split by a semicolon (;)</td>
+            </tr>
+            <tr>
+               <td>Example</td>
+               <td><code>2_Diamond.png;7_Melon.png;8_Orange.png</code></td>
+            </tr>
+         </tbody>
+      </table>
+      </ul>
+      <script>
+         const savedTheme = localStorage.getItem('theme');
+         if (savedTheme) {
+           document.documentElement.setAttribute('data-theme', savedTheme);
+         } else {
+           document.documentElement.setAttribute('data-theme', 'dark');
+         }
+         
+         function toggleTheme() {
+           const currentTheme = document.documentElement.getAttribute('data-theme');
+           const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+           document.documentElement.setAttribute('data-theme', newTheme);
+           localStorage.setItem('theme', newTheme);
+         }
+      </script>
+   </body>
+   <footer>
+      <p>
+         Extension by
+         <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a><br>
+         Docs created by
+         <a href="https://poetryandlilies.itch.io" target="_blank"
+            >PoetryandLilies</a
+            ><br>
+         2025
+      </p>
+   </footer>
 </html>
