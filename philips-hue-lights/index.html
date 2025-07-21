@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,247 +15,138 @@
     />
   </head>
   <body>
-    <h1 class="heading">
-      Philips Hue Light Control<img
-        src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/chrizzz-profile_image-300x300.png"
-        class="img-left"
-      /><img
-        src="https://sammi.solutions/assets/images/extensions/hue_ss1.png"
-        class="img-right"
-      />
-    </h1>
-    <h2 class="sub-heading">Allows you to control your Philips Hue Lights</h2>
-    <p>
-      Controlling your Philips Hue Lights remotely has never been simpler with
-      this extension! Check out the features below!
-    </p>
+    <button class="all-extensions" onclick="location.href='https://chrizzz-1508.github.io/extension-documentation/'">All Extensions</button>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+
+    <h1 class="heading">Philips Hue Light Control</h1>
+    <p>Controlling your Philips Hue Lights remotely has never been simpler with this extension!</p>
 
     <h2 class="sub-heading-1">Features</h2>
     <ul>
-      <li>Ability to check the status and settings of a light</li>
-      <li>
-        Ability to modify the settings of a light including; state, brightness,
-        saturation, temperature and hue value
-      </li>
-      <li>
-        Auto setup walks you through connecting the Philips Hue Bridge to SAMMI
-      </li>
+      <li>Check status and settings of a light</li>
+      <li>Modify settings: on/off, brightness, saturation, temperature, hue</li>
+      <li>Guided setup connects your Hue Bridge to SAMMI</li>
     </ul>
 
     <h2 class="sub-heading-1">Setup</h2>
     <ol>
-      <li>
-        Install the extension. Refer to the SAMMI
-        <a href="https://sammi.solutions/extensions/install" target="_blank"
-          >documentation</a
-        >
-        on how to install an extension.
-      </li>
-      <li>
-        The extension should now launch the setup dialogue. Follow the
-        instructions to auto discover the Philips Hue Bridge or enter the IP
-        manually
-        <a
-          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/setup1.png"
-          target="_blank"
-          title="Click for Large Image"
-          ><img
-            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/setup1.png"
-            alt="Setup Dialogue"
-          />
+      <li>Install the extension. See the <a href="https://sammi.solutions/extensions/install" target="_blank">SAMMI documentation</a>.</li>
+      <li>The setup dialogue will launch. You can auto-discover the Hue Bridge or enter the IP manually.
+        <a href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/setup1.png" target="_blank">
+          <img src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/setup1.png" alt="Setup Dialogue" />
         </a>
-        <br />
-        <a
-          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/setup2.png"
-          target="_blank"
-          title="Click for Large Image"
-          ><img
-            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/setup2.png"
-            alt="Setup Dialogue"
-          />
+        <a href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/setup2.png" target="_blank">
+          <img src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/setup2.png" alt="Setup Dialogue" />
         </a>
-        <br />
-        <a
-          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/setup3-lrg.png"
-          target="_blank"
-          title="Click for Large Image"
-        >
+        <a href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/setup3-lrg.png" target="_blank">
           <picture>
-            <source
-              srcset="
-                https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/setup3-lrg.png
-              "
-              media="(min-width: 601px)"
-            />
-            <img
-              src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/setup3.png"
-              alt="Setup Dialogue"
-            />
+            <source srcset="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/setup3-lrg.png" media="(min-width: 601px)" />
+            <img src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/setup3.png" alt="Setup Dialogue" />
           </picture>
         </a>
       </li>
-      <li>
-        If the pairing process was successful you will see the following popup
-        <br />
-        <a
-          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/setup4.png"
-          target="_blank"
-          title="Click for Large Image"
-          ><img
-            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/setup4.png"
-            alt="Setup Dialogue"
-          />
+      <li>If pairing is successful, this confirmation will appear:
+        <a href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/setup4.png" target="_blank">
+          <img src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/setup4.png" alt="Setup Complete" />
         </a>
       </li>
       <li>
-        If you need to modify the IP of the Philips Hue Bridge, you can edit the
-        phlc.ini file that the setup creates in the root SAMMI folder<br />
-        <a
-          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/deck.png"
-          target="_blank"
-          title="Click for Large Image"
-          ><img
-            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/deck.png"
-            alt="View of the Deck"
-          />
+        To change the IP address later, edit the <code>phlc.ini</code> file in your SAMMI root folder.
+        <a href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/deck.png" target="_blank">
+          <img src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/deck.png" alt="Deck View" />
         </a>
       </li>
     </ol>
 
-    <h2 class="sub-heading-1">Using the Commands</h2>
-    <ul>
-      <li>
-        You can refer to the example buttons in the deck at any point for
-        examples of both commands
-      </li>
-      <li>
-        <strong>Get Light Info</strong> - Fetches information about a specific
-        light
-        <ul>
-          <li><strong>ID</strong> - ID of the light</li>
-          <li>
-            <strong>On</strong> - If the specified light is on. 1 = on, 0 = off
-          </li>
-          <li>
-            <strong>Reachable</strong> - If the specified light is reachable by
-            the bridge. 1 = reachable, 0 = unreachable
-          </li>
-          <li>
-            <strong>Bri</strong> - Brightness, in range 0 - 254 (0 is not off)
-          </li>
-          <li><strong>Sat</strong> - Saturation, in range 0 - 254</li>
-          <li>
-            <strong>Ct</strong> - White color temperature, 154 (cold) - 500
-            (warm)
-          </li>
-          <li><strong>Hue</strong> - Hue value (color) in range 0 - 65535</li>
-          <li>
-            <strong>Example Payload:</strong>
-            <pre>
-                    <code>
-{
-"hue": 39563.0,
-"sat": 15.0,
-"bri": 254.0,
-"on": 0.0,
-"ct": 230.0,
-"reachable": 1.0,
-"id": 4.0,
-"name": "Desk"
-}
-                    </code>
-                </pre>
-          </li>
-        </ul>
-      </li>
-      <li>
-        All the available lights are viewable in the SAMMI Bridge <br />
-        <a
-          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/info.png"
-          target="_blank"
-          title="Click for Large Image"
-          ><img
-            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/info.png"
-            alt="Light info Button"
-        /></a>
-      </li>
-      <a
-        href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/light-info.png"
-        target="_blank"
-        title="Click for Large Image"
-        ><img
-          src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/light-info.png"
-          alt="Light info Button"
-      /></a>
-      <li>
-        <strong>Modify Light</strong> - Modifies a specific light (You can use
-        the above command to get the exact settings for a color you want)
-      </li>
-      <li>
-        <strong style="color: red"
-          >WARNING: Do not try to set the "White Temp" & "Hue / Color" at the
-          same time!</strong
-        >
-        <ul>
-          <li>
-            <strong>Light</strong> - ID of the light (using the name instead is
-            optional)
-          </li>
-          <li><strong>State</strong> - Change the status of the light</li>
-          <li>
-            <strong>Brightness</strong> - Change the brightness of the light in
-            a range from 0 - 254 (0 is not off)
-          </li>
-          <li>
-            <strong>Saturation</strong> - Change the saturation of the light in
-            a range from 0 - 254
-          </li>
-          <li>
-            <strong>White Temp</strong> - Change the white color temperature of
-            the light, 154 (cold) - 500 (warm)
-          </li>
-          <li>
-            <strong>Hue / Color</strong> - Change the hue value (color) of the
-            light in range 0 - 65535
-          </li>
-          <li>
-            Any of the above values can be left empty to retain the currently
-            set value
-          </li>
-        </ul>
-      </li>
-      <li>
-        The <strong>Light</strong> option above has a dropdown box that is
-        prefilled with all available lights that are selectable.<br />
-        <a
-          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/info2.png"
-          target="_blank"
-          title="Click for Large Image"
-          ><img
-            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/info2.png"
-            alt="Light modify Button"
-        /></a>
-      </li>
-      <a
-        href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/light-modify.png"
-        target="_blank"
-        title="Click for Large Image"
-        ><img
-          src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/light-modify.png"
-          alt="Light modify Button"
-      /></a>
-    </ul>
-  </body>
+    <h2 class="sub-heading-1">Commands</h2>
 
-  <footer>
-    <p>
-      Extension by
-      <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a><br />
-      Docs created by
-      <a href="https://poetryandlilies.itch.io" target="_blank"
-        >PoetryandLilies</a
-      ><br />
-      2025
-    </p>
-  </footer>
+    <h3>Get Light Info</h3>
+	<p>This command allows you to fetch the current settings of one of your commands</p>
+	<a href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/light-info.png" target="_blank">
+      <img src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/light-info.png" alt="Light info" />
+    </a>
+	    <p><strong>Example Payload:</strong></p>
+	<pre><code>{  "hue": 39563.0,
+  "sat": 15.0,
+  "bri": 254.0,
+  "on": 0.0,
+  "ct": 230.0,
+  "reachable": 1.0,
+  "id": 4.0,
+  "name": "Desk" }</code></pre>
+
+    <table class="settings-table">
+      <thead>
+        <tr><th>Field</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>ID</td><td>ID of the light</td></tr>
+        <tr><td>On</td><td>If the specified light is on. 1 = on, 0 = off </td></tr>
+        <tr><td>Reachable</td><td>If the specified light is reachable by the bridge. 1 = reachable, 0 = unreachable </td></tr>
+        <tr><td>Bri</td><td>Brightness, in range 0 - 254 (0 is not off) </td></tr>
+        <tr><td>Sat</td><td>Saturation, in range 0 - 254</td></tr>
+        <tr><td>Ct</td><td>White color temperature, 154 (cold) - 500 (warm) </td></tr>
+        <tr><td>Hue</td><td>Hue value (color) in range 0 - 65535</td></tr>
+      </tbody>
+    </table>
+
+
+
+
+    <h3>Modify Light</h3>
+    <p>This commands lets you turn your lights on / off and change the settings of the light.<br><strong style="color: red">WARNING:</strong> Do not set <strong>White Temp</strong> and <strong>Hue / Color</strong> at the same time.</p>
+    <table class="settings-table">
+      <thead>
+        <tr><th>Field</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Light</td><td>ID or name of the light</td></tr>
+        <tr><td>State</td><td>Turn light on or off</td></tr>
+        <tr><td>Brightness</td><td>0–254 (0 is not off)</td></tr>
+        <tr><td>Saturation</td><td>0–254</td></tr>
+        <tr><td>White Temp</td><td>154 (cold) – 500 (warm)</td></tr>
+        <tr><td>Hue / Color</td><td>0–65535</td></tr>
+        <tr><td>Note</td><td>Any field left blank keeps its current value</td></tr>
+      </tbody>
+    </table>
+
+    <a href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/info2.png" target="_blank">
+      <img src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/info2.png" alt="Modify Light Options" />
+    </a>
+    <a href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/light-modify.png" target="_blank">
+      <img src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/light-modify.png" alt="Light Modify Command" />
+    </a>
+	
+    <h2 class="sub-heading-1">Bridge</h2>
+	<p>You can also check out all your available lights with their IDs in your SAMMI Bridge.</p>
+	
+    <a href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/info.png" target="_blank">
+      <img src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/philips-hue-lights/info.png" alt="Bridge" />
+    </a>
+
+    <footer>
+      <p>
+        Extension by <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a><br>
+        Docs created by <a href="https://poetryandlilies.itch.io" target="_blank">PoetryandLilies</a><br>
+        Design by <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a><br>
+        2025
+      </p>
+    </footer>
+
+    <script>
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+
+      function toggleTheme() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+      }
+    </script>
+  </body>
 </html>
