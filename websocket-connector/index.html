@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,187 +15,127 @@
     />
   </head>
   <body>
-    <h1 class="heading">
-      Discord Webhook<img
-        src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/chrizzz-profile_image-300x300.png"
-        class="img-left"
-      /><img
-        src="https://sammi.solutions/assets/images/extensions/websocket_ss1.png"
-        class="img-right"
-      />
-    </h1>
-    <h2 class="sub-heading">
-      This extension lets you connect SAMMI to a websocket server
-    </h2>
+    <button class="all-extensions" onclick="location.href='https://chrizzz-1508.github.io/extension-documentation/'">All Extensions</button>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+
+
+    <h1 class="heading">Websocket Connector</h1>
     <p>
-      This extension lets you connect to a websocket server and receive any
-      responses in SAMMI! Check out the features below!
+      This extension lets you connect to a websocket server and receive any responses in SAMMI
     </p>
 
     <h2 class="sub-heading-1">Features</h2>
     <ul>
       <li>Connect to a websocket server</li>
       <li>Send a message to the websocket server</li>
-      <li>
-        Listen for any responses from the websocket server via extension trigger
-      </li>
-      <li>
-        Multiple connections are allowed and listed in the bridge for easy
-        viewing
-      </li>
+      <li>Listen for any responses from the websocket server via extension trigger</li>
+      <li>Multiple connections are allowed and listed in the bridge for easy viewing</li>
       <li>Auto reconnect if the connection is dropped</li>
       <li>Full example deck</li>
     </ul>
 
     <h2 class="sub-heading-1">Setup</h2>
     <ol>
+      <li>Install the extension. Refer to the SAMMI <a href="https://sammi.solutions/extensions/install" target="_blank">documentation</a> on how to install an extension.</li>
+      <li>Check out the example deck for a fully functional test to let you see how things operate.</li>
       <li>
-        Install the extension. Refer to the SAMMI
-        <a href="https://sammi.solutions/extensions/install" target="_blank"
-          >documentation</a
-        >
-        on how to install an extension.
-      </li>
-      <li>
-        Check out the example deck for a fully functional test to let you see
-        how things operate.
-      </li>
-      <li>
-        You can test if the extension has been installed correctly by using the
-        test buttons in the deck. First run the
-        <strong>Connect to a testserver</strong> button and then confirm that
-        you get a yellow popup in the bottom left of the SAMMI window with a
-        message starting
-        <strong style="color: yellow">"Data Received:"</strong> <br />
-        Optionally you can then run the
-        <strong>Send a message to the server</strong> button and another message
-        should popup in the bottom left
-        <strong style="color: yellow">"Data Received: Hi"</strong> <br />
-        <a
-          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/websocket-connector/deck.png"
-          target="_blank"
-          title="Click for Large Image"
-          ><img
-            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/websocket-connector/deck.png"
-            alt="View of the Deck"
-          />
+        You can test if the extension has been installed correctly by using the test buttons in the deck.<br>First run the <strong>Connect to a testserver</strong> button and then confirm that you get a popup in the bottom left of the SAMMI window with a message starting <strong>"Data Received:"</strong><br>
+        Optionally you can then run the <strong>Send a message to the server</strong> button and another message should popup in the bottom left <strong>"Data Received: Hi"</strong>
+        <a href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/websocket-connector/deck.png" target="_blank" title="Click for Large Image">
+          <img src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/websocket-connector/deck.png" alt="View of the Deck" />
         </a>
       </li>
     </ol>
 
     <h2 class="sub-heading-1">Using the Commands</h2>
-    <ul>
-      <li>
-        <strong>WS: Start Connection</strong> - This will add a new connection
-        to a websocket server.
-        <ul>
-          <li>
-            <strong>Name</strong> - This is the name of the connection. The name
-            used here will become the name of the extension trigger for this
-            connection.
-          </li>
-          <li>
-            <strong>Websocket URL</strong> - This is the URL of the websocket
-            server you want to connect to. It starts <strong>wss://</strong>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <strong>WS: Terminate Connection</strong> - This is where you terminate
-        an active websocket connection.
-        <ul>
-          <li>
-            <strong>Name</strong> - The name of the connection that you entered
-            when you started the connection.
-          </li>
-        </ul>
-      </li>
-      <li>
-        <strong>WS: Send Message</strong> - This is how you send a message to
-        the websocket server after you have started a connection.
-        <ul>
-          <li>
-            <strong>Name</strong> - The name of the connection that you entered
-            when you started the connection.
-          </li>
-          <li>
-            <strong>Message</strong> - This is the message you want to send to
-            the server.
-          </li>
-        </ul>
-        <br />
-        <a
-          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/websocket-connector/examples.png"
-          target="_blank"
-          title="Click for Large Image"
-          ><img
-            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/websocket-connector/examples.png"
-            alt="View of the commands"
-          />
-        </a>
-      </li>
-      <li>
-        <strong>Listening to events</strong> - To listen to any response from
-        the server, set an
-        <a
-          href="https://sammi.solutions/docs/commands/trigger-extension"
-          target="_blank"
-          title="Extension Trigger"
-          >extension trigger</a
-        >
-        on your button and use the name you entered when starting the
-        connection.<br />
-        <a
-          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/websocket-connector/trigger.png"
-          target="_blank"
-          title="Click for Large Image"
-          ><img
-            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/websocket-connector/trigger.png"
-            alt="Extension Trigger"
-          />
-        </a>
-        <br />
-        You can then use
-        <a
-          href="https://sammi.solutions/docs/commands/trigger-pull"
-          target="_blank"
-          title="Trigger Pull Data"
-          >Trigger Pull Data</a
-        >
-        and pull <strong>All</strong> to get the entire payload data.<br />
-        <a
-          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/websocket-connector/payload.png"
-          target="_blank"
-          title="Click for Large Image"
-          ><img
-            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/websocket-connector/payload.png"
-            alt="Extension Payload"
-          />
-        </a>
-      </li>
-      <li>
-        All of the connections you start are viewable in the bridge. <br />
-        <a
-          href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/websocket-connector/bridge.png"
-          target="_blank"
-          title="Click for Large Image"
-          ><img
-            src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/websocket-connector/bridge.png"
-            alt="View of the bridge"
-          />
-        </a>
-      </li>
-    </ul>
-  </body>
-  <footer>
+
+    <h3>WS: Start Connection</h3>
+    <table class="settings-table">
+      <thead>
+        <tr><th>Field</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Name</strong></td>
+          <td>This is the name of the connection.<br>The name used here will become the name of the extension trigger for this connection.</td>
+        </tr>
+        <tr>
+          <td><strong>Websocket URL</strong></td>
+          <td>This is the URL of the websocket server you want to connect to. It starts <strong>wss://</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>WS: Terminate Connection</h3>
+    <table class="settings-table">
+      <thead>
+        <tr><th>Field</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Name</strong></td>
+          <td>The name of the connection that you entered when you started the connection.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>WS: Send Message</h3>
+    <table class="settings-table">
+      <thead>
+        <tr><th>Field</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Name</strong></td>
+          <td>The name of the connection that you entered when you started the connection.</td>
+        </tr>
+        <tr>
+          <td><strong>Message</strong></td>
+          <td>This is the message you want to send to the server.</td>
+        </tr>
+      </tbody>
+    </table>
+    <a href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/websocket-connector/examples.png" target="_blank" title="Click for Large Image">
+      <img src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/websocket-connector/examples.png" alt="View of the commands" />
+    </a>
+
+    <h3>Listening to Events</h3>
     <p>
-      Extension by
-      <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a><br />
-      Docs created by
-      <a href="https://poetryandlilies.itch.io" target="_blank"
-        >PoetryandLilies</a
-      ><br />
-      2025
+      To listen to any response from the server, set an <a href="https://sammi.solutions/docs/commands/trigger-extension" target="_blank" title="Extension Trigger">extension trigger</a> on your button and use the name you entered when starting the connection.
     </p>
-  </footer>
+    <a href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/websocket-connector/trigger.png" target="_blank" title="Click for Large Image">
+      <img src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/websocket-connector/trigger.png" alt="Extension Trigger" />
+    </a>
+    <p>
+      You can then use <a href="https://sammi.solutions/docs/commands/trigger-pull" target="_blank" title="Trigger Pull Data">Trigger Pull Data</a> and pull <strong>All</strong> to get the entire payload data.
+    </p>
+    <a href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/websocket-connector/payload.png" target="_blank" title="Click for Large Image">
+      <img src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/websocket-connector/payload.png" alt="Extension Payload" />
+    </a>
+
+    <h3>View Connections in Bridge</h3>
+    <p>All of the connections you start are viewable in the bridge.</p>
+    <a href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/websocket-connector/bridge.png" target="_blank" title="Click for Large Image">
+      <img src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/websocket-connector/bridge.png" alt="View of the bridge" />
+    </a>
+
+    <footer>
+      <p>
+        Extension by <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a><br>
+        Docs created by <a href="https://poetryandlilies.itch.io" target="_blank">PoetryandLilies</a><br>
+        Design by <a href="https://github.com/Chrizzz-1508">Chrizzz</a><br>
+        2025
+      </p>
+    </footer>
+
+    <script>
+      const toggle = document.getElementById("theme-toggle");
+      toggle.addEventListener("click", () => {
+        document.documentElement.setAttribute(
+          "data-theme",
+          document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark"
+        );
+      });
+    </script>
+  </body>
 </html>
