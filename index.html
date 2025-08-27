@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Extension Documentation</title>
     <link
       rel="icon"
@@ -10,123 +10,128 @@
       href="https://static-cdn.jtvnw.net/jtv_user_pictures/3887579e-7b84-403e-9ed1-cc17c9789b1e-profile_image-300x300.png"
     />
     <style>
+      /* --- Layout safety --- */
+      *, *::before, *::after { box-sizing: border-box; }
+      html, body { width: 100%; overflow-x: hidden; }
+
       body {
         font-family: Arial, sans-serif;
         background-color: #1e1e1e;
         color: white;
         margin: 0;
-        padding: 2rem;
+        padding: 16px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
       }
 
       .heading {
         text-align: center;
-        font-size: 2rem;
-        margin-bottom: 2rem;
+        font-size: clamp(1.4rem, 2.5vw, 2rem);
+        margin: 0 0 16px;
       }
 
-.input-box {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 3rem;
-  width: 100%;
-}
+      .input-box {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 16px;
+      }
 
-#searchInput {
-  width: 300px;
-  padding: 10px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-}
+      #searchInput {
+        width: 100%;
+        max-width: 480px;
+        padding: 10px 12px;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+      }
 
-
+      /* --- Grid with explicit column counts --- */
       .grid {
         display: grid;
+        gap: 16px;
+        width: 100%;
         max-width: 1200px;
         margin: 0 auto;
-        gap: 1rem;
-        height: 150px;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        align-items: center;
+        flex: 1 1 auto;
+        grid-template-columns: 1fr;            /* phones: 1 column */
       }
 
-      .grid > div {
-        padding: 10px;
-        text-align: center;
-        background-color: #3ec6e0; /* subtle sky blueish */
+      @media (min-width: 420px) {
+        .grid { grid-template-columns: repeat(2, 1fr); }   /* small phones/portrait: 2 */
+      }
+      @media (min-width: 680px) {
+        .grid { grid-template-columns: repeat(3, 1fr); }   /* tablets: 3 */
+      }
+      @media (min-width: 1000px) {
+        .grid { grid-template-columns: repeat(4, 1fr); }   /* desktop: 4 */
+      }
+
+      /* --- Tile --- */
+      .tile {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        text-decoration: none;
+        color: inherit;
+        min-width: 0;       /* prevents overflow due to long captions */
+      }
+
+      .tile-visual {
+        position: relative;
+        background-color: #3ec6e0;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        transition: background-color 0.3s;
-        border-radius: 10px;
-        height: 150px;
-        position: relative;
+        border-radius: 12px;
+        aspect-ratio: 1 / 1;       /* square and responsive */
+        transition: filter 0.2s, transform 0.2s;
+      }
+      .tile-visual:hover {
+        filter: brightness(1.1);
+        transform: translateZ(0) scale(1.02);
+        background-image: none !important;
       }
 
       .tile-text {
-        font-size: 0px;
-        font-weight: bold;
-        color: white;
-        position: absolute;
-        top: 35%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-shadow: 2px 2px 4px #000;
+	  position: absolute;
+	  inset: 0;
+	  display: grid;
+	  place-items: center;
+	  justify-items: center;   /* ✅ center multi-line text horizontally */
+	  font-weight: 700;
+	  color: white;
+	  text-shadow: 2px 2px 4px #000;
+	  font-size: 0;            /* hidden until hover */
+	  pointer-events: none;
+	  text-align: center;      /* ✅ center text lines */
+	  transition: font-size 0.2s;
+	}
+
+	.tile-visual:hover .tile-text {
+	  font-size: clamp(1rem, 3.5vw, 1.6rem);
+	}
+
+
+      .tile-caption {
         text-align: center;
-        pointer-events: none;
+        font-weight: 700;
+        font-size: 0.95rem;
+        line-height: 1.2;
+        word-wrap: break-word;
+        overflow-wrap: anywhere;
       }
 
-      .tile-title {
-        font-size: 1.1em;
-        font-weight: bold;
-        color: white;
-        position: absolute;
-        top: 106%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-shadow: 2px 2px 4px #000;
+      .hidden { display: none !important; }
+
+      footer {
         text-align: center;
-        pointer-events: none;
+        padding: 16px 0 8px;
+        color: #ccc;
+        font-size: 0.9rem;
       }
-
-      .grid > div:hover .tile-text {
-        font-size: 2rem;
-      }
-
-      .grid > div:hover {
-        cursor: pointer;
-        filter: brightness(1.1);
-		  background-image: none !important;
-
-      }
-
-      .hidden {
-        display: none !important;
-      }
-	  html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.grid {
-  flex-grow: 1;
-}
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  color: #ccc;
-}
-
-
+      footer a { color: #3ec6e0; text-decoration: none; }
     </style>
   </head>
   <body>
@@ -142,134 +147,116 @@ footer {
     </div>
 
     <div class="grid">
-      <div
-        class="tile-1"
-        onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/clipshow'"
-        style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/clipshow_icon.png')"
-      >
-        <h2 class="tile-text">Clip Show</h2>
-        <h2 class="tile-title">Clip Show</h2>
-      </div>
-      <div
-        class="tile-2"
-        onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/crowd-control'"
-        style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/crowd_control_icon.png')"
-      >
-        <h2 class="tile-text">Crowd Control</h2>
-        <h2 class="tile-title">Crowd Control</h2>
-      </div>
-      <div
-        class="tile-3"
-        onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/discord-webhook'"
-        style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/discord_webhook_icon.png')"
-      >
-        <h2 class="tile-text">Discord Webhook</h2>
-        <h2 class="tile-title">Discord Webhook</h2>
-      </div>
-      <div
-        class="tile-4"
-        onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/get-random-clip'"
-        style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/get_random_clip_icon.png')"
-      >
-        <h2 class="tile-text">Get Random Clip</h2>
-        <h2 class="tile-title">Get Random Clip</h2>
-      </div>
-      <div
-        class="tile-5"
-        onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/obs-audio-monitoring'"
-        style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/audio_monitoring_icon.png')"
-      >
-        <h2 class="tile-text">OBS Audio Monitoring</h2>
-        <h2 class="tile-title">OBS Audio Monitoring</h2>
-      </div>
-      <div
-        class="tile-6"
-        onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/onscreen-timer'"
-        style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/onscreen_timer_icon.png')"
-      >
-        <h2 class="tile-text">Onscreen Timer</h2>
-        <h2 class="tile-title">Onscreen Timer</h2>
-      </div>
-      <div
-        class="tile-7"
-        onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/philips-hue-lights'"
-        style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/hue_icon.png')"
-      >
-        <h2 class="tile-text">Philips Hue Lights</h2>
-        <h2 class="tile-title">Philips Hue Lights</h2>
-      </div>
-      <div
-        class="tile-8"
-        onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/pulsoid'"
-        style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/pulsoid_icon.png')"
-      >
-        <h2 class="tile-text">Pulsoid</h2>
-        <h2 class="tile-title">Pulsoid</h2>
-      </div>
-      <div
-        class="tile-9"
-        onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/slot-machine'"
-        style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/slots_icon.png')"
-      >
-        <h2 class="tile-text">Slot Machine</h2>
-        <h2 class="tile-title">Slot Machine</h2>
-      </div>
-      <div
-        class="tile-10"
-        onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/stream-credits'"
-        style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/streamcredits_icon.png')"
-      >
-        <h2 class="tile-text">Stream Credits</h2>
-        <h2 class="tile-title">Stream Credits</h2>
-      </div>
-      <div
-        class="tile-11"
-        onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/voicemod'"
-        style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/voicemod_icon.png')"
-      >
-        <h2 class="tile-text">Voicemod</h2>
-        <h2 class="tile-title">Voicemod</h2>
-      </div>
-      <div
-        class="tile-12"
-        onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/websocket-connector'"
-        style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/websocket_icon.png')"
-      >
-        <h2 class="tile-text">WebSocket Connector</h2>
-        <h2 class="tile-title">WebSocket Connector</h2>
-      </div>
-	  <!--<div
-        class="tile-13"
-        onclick="window.location.href='https://chrizzz-1508.github.io/extension-documentation/chatbox'"
-        style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/chatbox_icon.png')"
-      >-->
-        <h2 class="tile-text">Chatbox</h2>
-		<h2 class="tile-title">Chatbox</h2>
-      </div>
+      <a class="tile" href="https://chrizzz-1508.github.io/extension-documentation/clipshow">
+        <div class="tile-visual" style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/clipshow_icon.png')">
+          <div class="tile-text">Clip Show</div>
+        </div>
+        <div class="tile-caption">Clip Show</div>
+      </a>
+
+      <a class="tile" href="https://chrizzz-1508.github.io/extension-documentation/crowd-control">
+        <div class="tile-visual" style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/crowd_control_icon.png')">
+          <div class="tile-text">Crowd Control</div>
+        </div>
+        <div class="tile-caption">Crowd Control</div>
+      </a>
+
+      <a class="tile" href="https://chrizzz-1508.github.io/extension-documentation/discord-webhook">
+        <div class="tile-visual" style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/discord_webhook_icon.png')">
+          <div class="tile-text">Discord Webhook</div>
+        </div>
+        <div class="tile-caption">Discord Webhook</div>
+      </a>
+
+      <a class="tile" href="https://chrizzz-1508.github.io/extension-documentation/get-random-clip">
+        <div class="tile-visual" style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/get_random_clip_icon.png')">
+          <div class="tile-text">Get Random Clip</div>
+        </div>
+        <div class="tile-caption">Get Random Clip</div>
+      </a>
+
+      <a class="tile" href="https://chrizzz-1508.github.io/extension-documentation/obs-audio-monitoring">
+        <div class="tile-visual" style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/audio_monitoring_icon.png')">
+          <div class="tile-text">OBS Audio Monitoring</div>
+        </div>
+        <div class="tile-caption">OBS Audio Monitoring</div>
+      </a>
+
+      <a class="tile" href="https://chrizzz-1508.github.io/extension-documentation/onscreen-timer">
+        <div class="tile-visual" style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/onscreen_timer_icon.png')">
+          <div class="tile-text">Onscreen Timer</div>
+        </div>
+        <div class="tile-caption">Onscreen Timer</div>
+      </a>
+
+      <a class="tile" href="https://chrizzz-1508.github.io/extension-documentation/philips-hue-lights">
+        <div class="tile-visual" style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/hue_icon.png')">
+          <div class="tile-text">Philips Hue Lights</div>
+        </div>
+        <div class="tile-caption">Philips Hue Lights</div>
+      </a>
+
+      <a class="tile" href="https://chrizzz-1508.github.io/extension-documentation/pulsoid">
+        <div class="tile-visual" style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/pulsoid_icon.png')">
+          <div class="tile-text">Pulsoid</div>
+        </div>
+        <div class="tile-caption">Pulsoid</div>
+      </a>
+
+      <a class="tile" href="https://chrizzz-1508.github.io/extension-documentation/slot-machine">
+        <div class="tile-visual" style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/slots_icon.png')">
+          <div class="tile-text">Slot Machine</div>
+        </div>
+        <div class="tile-caption">Slot Machine</div>
+      </a>
+
+      <a class="tile" href="https://chrizzz-1508.github.io/extension-documentation/stream-credits">
+        <div class="tile-visual" style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/streamcredits_icon.png')">
+          <div class="tile-text">Stream Credits</div>
+        </div>
+        <div class="tile-caption">Stream Credits</div>
+      </a>
+
+      <a class="tile" href="https://chrizzz-1508.github.io/extension-documentation/voicemod">
+        <div class="tile-visual" style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/voicemod_icon.png')">
+          <div class="tile-text">Voicemod</div>
+        </div>
+        <div class="tile-caption">Voicemod</div>
+      </a>
+
+      <a class="tile" href="https://chrizzz-1508.github.io/extension-documentation/websocket-connector">
+        <div class="tile-visual" style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/websocket_icon.png')">
+          <div class="tile-text">WebSocket Connector</div>
+        </div>
+        <div class="tile-caption">WebSocket Connector</div>
+      </a>
+
+      <!-- Chatbox (disabled)
+      <a class="tile" href="https://chrizzz-1508.github.io/extension-documentation/chatbox">
+        <div class="tile-visual" style="background-image: url('https://chrizzz-1508.github.io/extension-documentation/thumbnails/chatbox_icon.png')">
+          <div class="tile-text">Chatbox</div>
+        </div>
+        <div class="tile-caption">Chatbox</div>
+      </a>
+      -->
     </div>
+
     <footer>
       <p>
-        &copy; Design by <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a> and <a href="https://poetryandlilies.itch.io" target="_blank">PoetryandLilies</a><br>
-        &copy; Search function by <a href="https://poetryandlilies.itch.io" target="_blank">PoetryandLilies</a><br>
+        &copy; Design by
+        <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a>
+        <a href="https://poetryandlilies.itch.io" target="_blank">PoetryandLilies</a><br />
         2025
       </p>
     </footer>
+
     <script>
       function filterGrid() {
-        const searchInput = document
-          .getElementById("searchInput")
-          .value.toLowerCase();
-        const gridItems = document.querySelectorAll(".grid > div");
-
-        gridItems.forEach((item) => {
-          const h2 = item.querySelector("h2");
-          const text = h2 ? h2.textContent || h2.innerText : "";
-
-          if (text.toLowerCase().includes(searchInput)) {
-            item.classList.remove("hidden");
-          } else {
-            item.classList.add("hidden");
-          }
+        const q = document.getElementById("searchInput").value.toLowerCase();
+        const tiles = document.querySelectorAll(".grid .tile");
+        tiles.forEach((tile) => {
+          const label = tile.textContent.toLowerCase();
+          tile.classList.toggle("hidden", !label.includes(q));
         });
       }
     </script>
