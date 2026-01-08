@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elgato SAMMI Connector</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/chrizzz-profile_image-300x300.png"
+    />
+    <link rel="stylesheet" href="https://Chrizzz-1508.github.io/extension-documentation/styles.css" />
+  </head>
+
+  <body>
+    <button class="all-extensions" onclick="location.href='https://chrizzz-1508.github.io/extension-documentation/'">
+      All Extensions
+    </button>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+
+    <h1 class="heading">Elgato SAMMI Connector</h1>
+
+    <p>This plugin allows you to connect your Elgato Stream Deck with SAMMI.</p>
+
+    <p>
+      <strong>⚠️ Important:</strong> This plugin will only work while <strong>NO API Password</strong> is set in SAMMI.
+      If you have an API Password configured, remove it/disable it before using this extension.
+    </p>
+
+    <h2 class="sub-heading-1">Setup</h2>
+    To setup this plugin, just double click the <strong>SAMMI Connector.streamDeckPlugin</strong>file and press install.
+
+    <h2 class="sub-heading-1">Elgato Actions</h2>
+    <p>This plugin adds <strong>5 new Stream Deck actions</strong> you can use to control SAMMI.</p>
+		
+	<a
+      href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/sammi-connector/overview.png"
+      target="_blank"
+    >
+      <img
+        src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/sammi-connector/overview.png"
+        alt="Actions"
+      />
+    </a>
+	
+    <!-- 1) Trigger Button -->
+    <h3 class="sub-heading-2">Trigger Button</h3>
+    <p>
+      This action will trigger a button in SAMMI — just enter the <strong>Button ID</strong> of the button you want to
+      trigger.
+    </p>
+    <a
+      href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/sammi-connector/triggerbutton.png"
+      target="_blank"
+    >
+      <img
+        src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/sammi-connector/triggerbutton.png"
+        alt="Stream Deck Action - Trigger Button"
+      />
+    </a>
+	<p>
+      You can easily get the <strong>Button ID</strong> by rightclicking any button.
+    </p>
+
+    <!-- 2) Send Webhook Trigger -->
+    <h3 class="sub-heading-2">Send Webhook Trigger</h3>
+    <p>
+      This action can be used to trigger <strong>Webhook Triggers</strong> inside SAMMI.<br>
+      Unlike for the <strong>Trigger Button<strong> action, you can provide a <strong>JSON payload</strong> which you then can read in SAMMI using a <strong>Trigger Pull</strong> command.
+    </p>
+    <a
+      href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/sammi-connector/webhook.png"
+      target="_blank"
+    >
+      <img
+        src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/sammi-connector/webhook.png"
+        alt="Stream Deck Action - Send Webhook Trigger"
+      />
+    </a>	
+
+    <!-- 3) Set Variable -->
+    <h3 class="sub-heading-2">Set Variable</h3>
+    <p>
+      This action sets a string variable in a <strong>PERSISTENT</strong> button of your choice.
+      Provide the <strong>Button ID</strong>, <strong>Variable Name</strong>, and the <strong>Value</strong> you want to
+      set.
+    </p>
+    <a
+      href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/sammi-connector/setvariable.png"
+      target="_blank"
+    >
+      <img
+        src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/sammi-connector/setvariable.png"
+        alt="Stream Deck Action - Set Variable"
+      />
+    </a>
+
+    <!-- 4) Delete Variable -->
+    <h3 class="sub-heading-2">Delete Variable</h3>
+    <p>
+      Delete any variable from a <strong>PERSISTENT</strong> button by providing the <strong>Button ID</strong> and the
+      <strong>Variable Name</strong>.
+    </p>
+    <a
+      href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/sammi-connector/delete.png"
+      target="_blank"
+    >
+      <img
+        src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/sammi-connector/delete.png"
+        alt="Stream Deck Action - Delete Variable"
+      />
+    </a>
+
+    <!-- 5) Change Deck Status -->
+    <h3 class="sub-heading-2">Change Deck Status</h3>
+    <p>
+      Control the status of your Decks in SAMMI: <strong>Turn On</strong>, <strong>Turn Off</strong>, or
+      <strong>Toggle</strong>.
+    </p>
+    <p>
+      You must provide the <strong>Deck ID</strong> (get it by right-clicking a deck in SAMMI and choosing
+      <strong>Copy ID</strong> — this will <strong>not</strong> work with the Deck Name).
+    </p>
+    <a
+      href="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/sammi-connector/image.png"
+      target="_blank"
+    >
+      <img
+        src="https://raw.githubusercontent.com/Chrizzz-1508/extension-documentation/refs/heads/main/sammi-connector/image.png"
+        alt="Stream Deck Action - Change Deck Status"
+      />
+    </a>
+
+    <footer>
+      <p>
+        Extension by <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a><br />
+        Docs by <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a><br />
+        Design by <a href="https://linktr.ee/chrizzz_1508" target="_blank">Chrizzz</a><br />
+        2025
+      </p>
+    </footer>
+
+    <script>
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme) {
+        document.documentElement.setAttribute("data-theme", savedTheme);
+      } else {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+
+      function toggleTheme() {
+        const currentTheme = document.documentElement.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+      }
+    </script>
+  </body>
+</html>
